@@ -4,6 +4,7 @@ import { Route, Link } from "react-router-dom";
 import About from "../About/About.js";
 import NewPhotoForm from "../../containers/NewPhotoForm";
 import PhotoDisplay from "../../containers/PhotoDisplay";
+import CollectionDisplay from "../../containers/CollectionDisplay";
 
 // import RacerDisplay from "../../containers/RacerDisplay";
 import "./App.css";
@@ -49,7 +50,7 @@ class App extends Component {
           {/* <Route path="/" exact component={Home} /> */}
           <Route path="/" exact component={PhotoDisplay} />
           {/* {/* <Route path="/collections" exact component={Collections} /> */}
-
+          <Route path="/collections" exact component={CollectionDisplay} />
           <div>
             <Route path="/upload" exact component={NewPhotoForm} />
           </div>
