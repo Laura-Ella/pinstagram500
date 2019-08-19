@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Route, Link } from "react-router-dom";
 import Home from "../Home/Home.js";
+import About from "../About/About.js";
 // import NewAddForm from "../../containers/NewAddForm";
 // import RacerDisplay from "../../containers/RacerDisplay";
 import "./App.css";
@@ -20,12 +21,22 @@ class App extends Component {
               <div className="navBottomLinks">
                 <Link className="hoverable" to="/collections">
                   <div>
-                    <p>[Collections]</p>
+                    <p>[ Collections ]</p>
+                  </div>
+                </Link>
+                <Link className="hoverable" to="/upload">
+                  <div>
+                    <p>[ Upload ]</p>
                   </div>
                 </Link>
                 <Link className="hoverable" to="/sign-in">
                   <div>
-                    <p>[Sign-In]</p>
+                    <p>[ Sign-In ]</p>
+                  </div>
+                </Link>
+                <Link className="hoverable" to="/about">
+                  <div>
+                    <p>[ About ]</p>
                   </div>
                 </Link>
               </div>
@@ -34,8 +45,8 @@ class App extends Component {
         </fieldset>
         <main>
           <Route path="/" exact component={Home} />
-          <Route path="/collections" exact component={Collections} />
-          <Route path="/upload" exact component={NewPictureForm} />
+          {/* <Route path="/collections" exact component={Collections} />
+          <Route path="/upload" exact component={NewPictureForm} /> */}
           <Route path="/about" exact component={About} />
           {/* <div className="appCenter">
             <div className="appGrid">
