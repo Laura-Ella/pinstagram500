@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import { Route, Link } from "react-router-dom";
-import Home from "../Home/Home.js";
+// import Home from "../Home/Home.js";
 import About from "../About/About.js";
 import NewPhotoForm from "../../containers/NewPhotoForm";
+import PhotoDisplay from "../../containers/PhotoDisplay";
+
 // import RacerDisplay from "../../containers/RacerDisplay";
 import "./App.css";
 
@@ -44,7 +46,8 @@ class App extends Component {
           </nav>
         </fieldset>
         <main>
-          <Route path="/" exact component={Home} />
+          {/* <Route path="/" exact component={Home} /> */}
+          <Route path="/" exact component={PhotoDisplay} />
           {/* {/* <Route path="/collections" exact component={Collections} /> */}
 
           <div>

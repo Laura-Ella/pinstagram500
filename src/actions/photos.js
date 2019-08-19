@@ -13,9 +13,9 @@ export function createNewPhoto(name, birthplace, team, rank, image) {
   };
 }
 
-export const deletePHOTO = id => ({ type: DELETE_PHOTO, payload: id });
+export const deletePhoto = id => ({ type: DELETE_PHOTO, payload: id });
 
-export const updatePHOTO = (id, updatedPHOTO) => ({
+export const updatePhoto = (id, updatedPHOTO) => ({
   type: UPDATE_PHOTO,
   payload: {
     id,
