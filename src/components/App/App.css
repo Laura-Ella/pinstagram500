@@ -5,6 +5,7 @@ body {
   /* font-size: 14pt; */
   width: 100vw;
   height: 100vh;
+  font-family: "Muli", sans-serif;
 }
 nav {
   background: black;
@@ -31,6 +32,7 @@ nav a:hover {
   margin: 0;
   padding: 0;
   border: 1px solid white;
+  display: block;
 }
 .pinstagramTitleDiv {
   /* border: 2px solid white; */
@@ -48,4 +50,5 @@ nav a:hover {
 fieldset {
   margin: 0;
   border: 5px solid #2d2926;
+  padding: 0.25%;
 }

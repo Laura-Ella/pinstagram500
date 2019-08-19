@@ -14,18 +14,18 @@ class App extends Component {
             <div>
               <Link to="/">
                 <div className="pinstagramTitleDiv">
-                  <p className="navFonts">Pinstagram500</p>
+                  <p className="navHeaderFont">Pinstagram500</p>
                 </div>
               </Link>
               <div className="navBottomLinks">
                 <Link className="hoverable" to="/collections">
                   <div>
-                    <p className="navFonts">[Collections]</p>
+                    <p>[Collections]</p>
                   </div>
                 </Link>
                 <Link className="hoverable" to="/sign-in">
                   <div>
-                    <p className="navFonts">[Sign-In]</p>
+                    <p>[Sign-In]</p>
                   </div>
                 </Link>
               </div>
@@ -33,8 +33,11 @@ class App extends Component {
           </nav>
         </fieldset>
         <main>
-          {/* <Route path="/" exact component={Home} />
-          <div className="appCenter">
+          <Route path="/" exact component={Home} />
+          <Route path="/collections" exact component={Collections} />
+          <Route path="/upload" exact component={NewPictureForm} />
+          <Route path="/about" exact component={About} />
+          {/* <div className="appCenter">
             <div className="appGrid">
               <div className="driversCenter">
                 <Route path="/drivers" exact component={RacerDisplay} />
