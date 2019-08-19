@@ -3,7 +3,11 @@ import "./About.css";
 
 class About extends Component {
   render() {
-    return <div>HI</div>;
+    return (
+      <div>
+        <p>HERE IS THE ABOUT</p>
+      </div>
+    );
   }
 }
 
