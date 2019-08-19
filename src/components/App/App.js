@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import { Route, Link } from "react-router-dom";
 import Home from "../Home/Home.js";
 import About from "../About/About.js";
-import NewPictureForm from "../../containers/NewPhotoForm";
-// import NewAddForm from "../../containers/NewAddForm";
+import NewPhotoForm from "../../containers/NewPhotoForm";
 // import RacerDisplay from "../../containers/RacerDisplay";
 import "./App.css";
 
@@ -47,7 +46,10 @@ class App extends Component {
         <main>
           <Route path="/" exact component={Home} />
           {/* {/* <Route path="/collections" exact component={Collections} /> */}
-          <Route path="/upload" exact component={NewPictureForm} />
+
+          <div>
+            <Route path="/upload" exact component={NewPhotoForm} />
+          </div>
           <Route path="/about" exact component={About} />
           {/* <div className="appCenter">
             <div className="appGrid">

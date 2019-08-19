@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./AddPhoto.css";
 import { createNewPhoto } from "../../actions/photos";
 
-export default class Add extends Component {
+export default class AddPhoto extends Component {
   constructor(props) {
     super(props);
     this.state = {
