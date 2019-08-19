@@ -41,7 +41,7 @@ export default class AddPhoto extends Component {
       <form className="form" onSubmit={this.handleSubmit}>
         <div classname="centerFlex">
           <div className="formGrid">
-            <div className="driverTitle">Add a Driver</div>
+            <div className="driverTitle">Add a Photo</div>
             <div className="name">
               <label>Name:</label>
               <input className="inputField" type="text" />
