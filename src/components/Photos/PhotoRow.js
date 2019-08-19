@@ -2,10 +2,10 @@ import React from "react";
 import "./PhotoRow.css";
 
 const PhotoRow = ({
-  name = "",
-  birthplace = "",
-  team = "",
-  rank,
+  //   name = "",
+  //   birthplace = "",
+  //   team = "",
+  //   rank,
   image = "",
   onChange = () => {},
   onClick = () => {}
@@ -13,7 +13,7 @@ const PhotoRow = ({
   <div>
     <div className="contain">
       <div
-        className="driverDivs"
+        className="photo"
         style={{
           backgroundImage: `url(${image})`,
           backgroundPosition: "center",
@@ -46,7 +46,7 @@ const PhotoRow = ({
         </div> */}
       </div>
 
-      <select
+      {/* <select
         className="teamChanger"
         onChange={onChange}
         name="team"
@@ -62,7 +62,7 @@ const PhotoRow = ({
         <option value="McLaren">McLaren</option>
         <option value="Racing Point">Racing Point</option>
         <option value="Williams">Williams</option>
-      </select>
+      </select> */}
 
       <button className="delete" onClick={onClick}>
         X
