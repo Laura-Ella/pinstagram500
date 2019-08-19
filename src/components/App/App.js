@@ -9,18 +9,29 @@ class App extends Component {
   render() {
     return (
       <div>
-        <nav>
-          {/* <Link to="/">
-            <img
-              src="https://i.ndtvimg.com/i/2017-11/f1-logo-2018_827x510_81511713381.png"
-              alt=""
-            />
-          </Link>
-          <Link to="/drivers">
-            <h3>Drivers</h3>
-          </Link> */}
-          Hello
-        </nav>
+        <fieldset>
+          <nav>
+            <div>
+              <Link to="/">
+                <div className="pinstagramTitleDiv">
+                  <p className="navFonts">Pinstagram500</p>
+                </div>
+              </Link>
+              <div className="navBottomLinks">
+                <Link className="hoverable" to="/collections">
+                  <div>
+                    <p className="navFonts">[Collections]</p>
+                  </div>
+                </Link>
+                <Link className="hoverable" to="/sign-in">
+                  <div>
+                    <p className="navFonts">[Sign-In]</p>
+                  </div>
+                </Link>
+              </div>
+            </div>
+          </nav>
+        </fieldset>
         <main>
           {/* <Route path="/" exact component={Home} />
           <div className="appCenter">
