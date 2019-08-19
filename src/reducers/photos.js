@@ -43,7 +43,11 @@ import axios from "axios";
 //   }
 // });
 
-export default function racerReducer(state = DEFAULT_STATE, action) {
+var DEFAULT_STATE = {
+  photos: []
+};
+
+export default function photoReducer(state = DEFAULT_STATE, action) {
   switch (action.type) {
     case CREATE_PHOTO:
       return {
