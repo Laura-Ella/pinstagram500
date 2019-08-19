@@ -56,9 +56,9 @@ https://unsplash.com/documentation#list-collections
 
 2. Collection
 
-- Title
+- Title (of the collection)
 - Tags {
-  name
+  title
   }
 
 - Preview_Photos {
