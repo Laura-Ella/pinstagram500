@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
-import Add from "../components/Add/Add";
+import AddPhoto from "../components/AddPhoto/AddPhoto";
 
 const wrapperFunction = connect();
-const NewPhotoForm = wrapperFunction(Add);
+const NewPhotoForm = wrapperFunction(AddPhoto);
 
 export default NewPhotoForm;

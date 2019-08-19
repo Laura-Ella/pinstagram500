@@ -1,6 +1,6 @@
 import { CREATE_PHOTO, UPDATE_PHOTO, DELETE_PHOTO } from "../constants/photos";
 
-export function createNewPHOTO(name, birthplace, team, rank, image) {
+export function createNewPhoto(name, birthplace, team, rank, image) {
   return {
     type: CREATE_PHOTO,
     payload: {
