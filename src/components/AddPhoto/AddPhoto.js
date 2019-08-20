@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./AddPhoto.css";
-import { createNewPhoto } from "../../actions/photos";
+import { createNewPhoto } from "../../actions/photosAndCollections";
 
 export default class AddPhoto extends Component {
   constructor(props) {

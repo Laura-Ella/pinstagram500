@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { deletePhoto, updatePhoto } from "../actions/photos";
+import { deletePhoto, updatePhoto } from "../actions/photosAndCollections";
 import PhotoTable from "../components/Photos/PhotoTable";
 import PhotoRow from "../components/Photos/PhotoRow";
 

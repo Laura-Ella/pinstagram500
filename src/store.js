@@ -1,13 +1,7 @@
-// import thunkMiddleware from "redux-thunk";
-// import { createStore, applyMiddleware } from "redux";
 import { createStore } from "redux";
-import photoReducer from "./reducers/photos";
-
-// const store = createStore(racerReducer, applyMiddleware(thunkMiddleware));
+import photoAndCollectionsReducer from "./reducers/photoAndCollections";
 
 export default createStore(
-  photoReducer,
+  photoAndCollectionsReducer,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
-
-// export default store;

@@ -5,7 +5,7 @@ import {
   CREATE_COLLECTION,
   UPDATE_COLLECTION,
   DELETE_COLLECTION
-} from "../constants/photos";
+} from "../constants/photosAndCollections";
 
 export function createNewPhoto(image) {
   return {

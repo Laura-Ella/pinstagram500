@@ -1,15 +1,19 @@
 import {
+  CREATE_PHOTO,
+  UPDATE_PHOTO,
+  DELETE_PHOTO,
   CREATE_COLLECTION,
   UPDATE_COLLECTION,
   DELETE_COLLECTION
-} from "../constants/collections";
+} from "../constants/photosAndCollections";
 import axios from "axios";
+
 // const searchUrl = "https://f1-mern-app-api.herokuapp.com";
 
-// let collections = [];
+// let photos = [];
 
 // var DEFAULT_STATE = {
-//   collections
+//   photos
 // };
 
 // async function getData() {
@@ -32,7 +36,7 @@ import axios from "axios";
 // }
 
 // getData().then(res => {
-//   let collections2 = res.map(list => {
+//   let photos2 = res.map(list => {
 //     let x = {
 //       name: list.name,
 //       birthplace: list.birthplace,
@@ -42,17 +46,17 @@ import axios from "axios";
 //     };
 //     return x;
 //   });
-//   for (let i = 0; i < collections2.length; i++) {
-//     collections.push(racers2[i]);
+//   for (let i = 0; i < photos2.length; i++) {
+//     photos.push(racers2[i]);
 //   }
 // });
 
-var collections = [
+var photos = [
   {
     width: 7680,
     height: 4320,
     image:
-      "https://images.unsplash.com/collection-1562887189-7c2ae6ace6dc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjg3NDk1fQ",
+      "https://images.unsplash.com/photo-1562887189-7c2ae6ace6dc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjg3NDk1fQ",
     alt_description: "Honest makeup palette",
     likes: 30,
     username: "honest"
@@ -61,19 +65,60 @@ var collections = [
     width: 7680,
     height: 4320,
     image:
-      "https://images.unsplash.com/collection-1566241966316-befc8de1ec90?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjg3NDk1fQ",
+      "https://images.unsplash.com/photo-1566241966316-befc8de1ec90?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjg3NDk1fQ",
     alt_description: "n/a",
     likes: 1,
     username: "gersonrepreza"
   }
 ];
 
+var collections = [
+  {
+    width: 7680,
+    height: 4320,
+    image:
+      "https://images.unsplash.com/photo-1562887189-7c2ae6ace6dc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjg3NDk1fQ",
+    alt_description: "Honest makeup palette",
+    likes: 30,
+    username: "honest"
+  }
+];
+
 var DEFAULT_STATE = {
+  photos,
   collections
 };
 
-export default function collectionReducer(state = DEFAULT_STATE, action) {
+export default function photoAndCollectionsReducer(
+  state = DEFAULT_STATE,
+  action
+) {
   switch (action.type) {
+    case CREATE_PHOTO:
+      return {
+        ...state,
+        photos: [...state.photos, action.payload]
+      };
+    case UPDATE_PHOTO:
+      return {
+        ...state,
+        photos: state.photos.map((photo, index) => {
+          if (index !== action.payload.id) {
+            return photo;
+          }
+          return {
+            ...photo,
+            ...action.payload.updatedphoto
+          };
+        })
+      };
+    case DELETE_PHOTO:
+      return {
+        ...state,
+        photos: state.photos.filter((photo, id) => {
+          return id !== action.payload;
+        })
+      };
     case CREATE_COLLECTION:
       return {
         ...state,
@@ -88,7 +133,7 @@ export default function collectionReducer(state = DEFAULT_STATE, action) {
           }
           return {
             ...collection,
-            ...action.payload.updatedcollection
+            ...action.payload.updatedphoto
           };
         })
       };
