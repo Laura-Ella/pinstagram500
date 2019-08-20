@@ -2,20 +2,22 @@ import React from "react";
 import "./CollectionRow.css";
 
 const CollectionRow = ({
-  //   name = "",
-  //   birthplace = "",
-  //   team = "",
-  //   rank,
-  image = "",
+  title = "",
+  tags = "",
+  preview_photos = "",
   onChange = () => {},
   onClick = () => {}
 }) => (
   <div>
+    <div>
+      <p>{title}</p>
+      <p>Tags: {tags}</p>
+    </div>
     <div className="contain">
       <div
         className="photo"
         style={{
-          backgroundImage: `url(${image})`,
+          backgroundImage: `url(${preview_photos})`,
           backgroundPosition: "center",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
