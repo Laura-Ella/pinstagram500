@@ -1,6 +1,13 @@
-import { CREATE_PHOTO, UPDATE_PHOTO, DELETE_PHOTO } from "../constants/photos";
+import {
+  CREATE_PHOTO,
+  UPDATE_PHOTO,
+  DELETE_PHOTO,
+  CREATE_COLLECTION,
+  UPDATE_COLLECTION,
+  DELETE_COLLECTION
+} from "../constants/photos";
 import axios from "axios";
-import { CREATE_COLLECTION } from "../constants/collections";
+
 // const searchUrl = "https://f1-mern-app-api.herokuapp.com";
 
 // let photos = [];
@@ -113,6 +120,26 @@ export default function photoReducer(state = DEFAULT_STATE, action) {
       return {
         ...state,
         collections: [...state.collections, action.payload]
+      };
+    case UPDATE_COLLECTION:
+      return {
+        ...state,
+        collections: state.collections.map((collection, index) => {
+          if (index !== action.payload.id) {
+            return collection;
+          }
+          return {
+            ...collection,
+            ...action.payload.updatedphoto
+          };
+        })
+      };
+    case DELETE_COLLECTION:
+      return {
+        ...state,
+        collections: state.collections.filter((collection, id) => {
+          return id !== action.payload;
+        })
       };
     default:
       return state;

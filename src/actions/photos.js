@@ -2,7 +2,9 @@ import {
   CREATE_PHOTO,
   UPDATE_PHOTO,
   DELETE_PHOTO,
-  CREATE_COLLECTION
+  CREATE_COLLECTION,
+  UPDATE_COLLECTION,
+  DELETE_COLLECTION
 } from "../constants/photos";
 
 export function createNewPhoto(image) {
@@ -40,3 +42,16 @@ export function createNewCollection(image) {
     }
   };
 }
+
+export const deleteCollection = id => ({
+  type: DELETE_COLLECTION,
+  payload: id
+});
+
+export const updateCollection = (id, updatedCOLLECTION) => ({
+  type: UPDATE_COLLECTION,
+  payload: {
+    id,
+    updatedCOLLECTION
+  }
+});

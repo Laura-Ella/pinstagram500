@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { deletePhoto, updatePhoto } from "../actions/photos";
+import { deleteCollection, updateCollection } from "../actions/photos";
 import PhotoTable from "../components/Photos/PhotoTable";
 import PhotoRow from "../components/Photos/PhotoRow";
 
@@ -30,8 +30,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  onRemove: id => dispatch(deletePhoto(id)),
-  onUpdate: (id, update) => dispatch(updatePhoto(id, update))
+  onRemove: id => dispatch(deleteCollection(id)),
+  onUpdate: (id, update) => dispatch(updateCollection(id, update))
 });
 
 const PhotoDisplay = connect(
