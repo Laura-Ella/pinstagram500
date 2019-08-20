@@ -6,10 +6,10 @@ export default class AddPhoto extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: "",
-      birthplace: "",
-      team: "",
-      rank: 1,
+      // name: "",
+      // birthplace: "",
+      // team: "",
+      // rank: 1,
       image: ""
     };
     this.handleChange = this.handleChange.bind(this);
@@ -22,19 +22,19 @@ export default class AddPhoto extends Component {
   }
   handleSubmit(evt) {
     evt.preventDefault();
-    let name = evt.target[0].value;
-    let birthplace = evt.target[1].value;
-    let team = evt.target[2].value;
-    let rank = evt.target[3].value;
-    let image = evt.target[4].value;
+    let image = evt.target[0].image;
+    // let birthplace = evt.target[1].value;
+    // let team = evt.target[2].value;
+    // let rank = evt.target[3].value;
+    // let image = evt.target[4].value;
 
-    this.props.dispatch(createNewPhoto(name, birthplace, team, rank, image));
+    this.props.dispatch(createNewPhoto(image));
 
     evt.target[0].value = "";
-    evt.target[1].value = "";
-    evt.target[2].value = "";
-    evt.target[3].value = "";
-    evt.target[4].value = "";
+    // evt.target[1].value = "";
+    // evt.target[2].value = "";
+    // evt.target[3].value = "";
+    // evt.target[4].value = "";
   }
   render() {
     return (
@@ -43,10 +43,10 @@ export default class AddPhoto extends Component {
           <div className="formGrid">
             <div className="driverTitle">Add a Photo</div>
             <div className="name">
-              <label>Name:</label>
+              <label>Image:</label>
               <input className="inputField" type="text" />
             </div>
-            <div className="birthplace">
+            {/* <div className="birthplace">
               <label>Birthplace:</label>
               <input className="inputField" type="text" />
             </div>
@@ -61,7 +61,7 @@ export default class AddPhoto extends Component {
             <div className="image">
               <label>Image:</label>
               <input className="inputField" type="text" />
-            </div>
+            </div> */}
             <button className="submit" type="submit">
               Submit
             </button>
