@@ -4,14 +4,14 @@ import {
   deleteCollection,
   updateCollection
 } from "../actions/photosAndCollections";
-import PhotoTable from "../components/Photos/PhotoTable";
-import PhotoRow from "../components/Photos/PhotoRow";
+import CollectionTable from "../components/Collections/CollectionTable";
+import CollectionRow from "../components/Collections/CollectionRow";
 
-const Photos = ({ collections, onRemove, onUpdate }) => {
+const Collection = ({ collections, onRemove, onUpdate }) => {
   return (
-    <PhotoTable>
+    <CollectionTable>
       {collections.map((d, i) => (
-        <PhotoRow
+        <CollectionRow
           key={i}
           {...d}
           onClick={e => {
@@ -24,7 +24,7 @@ const Photos = ({ collections, onRemove, onUpdate }) => {
           }}
         />
       ))}
-    </PhotoTable>
+    </CollectionTable>
   );
 };
 
@@ -37,9 +37,9 @@ const mapDispatchToProps = dispatch => ({
   onUpdate: (id, update) => dispatch(updateCollection(id, update))
 });
 
-const PhotoDisplay = connect(
+const CollectionDisplay = connect(
   mapStateToProps,
   mapDispatchToProps
-)(Photos);
+)(Collection);
 
-export default PhotoDisplay;
+export default CollectionDisplay;
