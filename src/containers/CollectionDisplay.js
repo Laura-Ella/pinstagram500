@@ -1,14 +1,14 @@
 import React from "react";
 import { connect } from "react-redux";
-import { deleteCollection, updateCollection } from "../actions/collections";
-import CollectionTable from "../components/Collections/CollectionTable";
-import CollectionRow from "../components/Collections/CollectionRow";
+import { deletePhoto, updatePhoto } from "../actions/photos";
+import PhotoTable from "../components/Photos/PhotoTable";
+import PhotoRow from "../components/Photos/PhotoRow";
 
-const Photos = ({ photos, onRemove, onUpdate }) => {
+const Photos = ({ collections, onRemove, onUpdate }) => {
   return (
-    <CollectionTable>
-      {photos.map((d, i) => (
-        <CollectionRow
+    <PhotoTable>
+      {collections.map((d, i) => (
+        <PhotoRow
           key={i}
           {...d}
           onClick={e => {
@@ -21,17 +21,17 @@ const Photos = ({ photos, onRemove, onUpdate }) => {
           }}
         />
       ))}
-    </CollectionTable>
+    </PhotoTable>
   );
 };
 
 const mapStateToProps = state => ({
-  photos: state.photos
+  collections: state.collections
 });
 
 const mapDispatchToProps = dispatch => ({
-  onRemove: id => dispatch(deleteCollection(id)),
-  onUpdate: (id, update) => dispatch(updateCollection(id, update))
+  onRemove: id => dispatch(deletePhoto(id)),
+  onUpdate: (id, update) => dispatch(updatePhoto(id, update))
 });
 
 const PhotoDisplay = connect(

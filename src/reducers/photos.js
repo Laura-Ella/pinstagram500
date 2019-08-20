@@ -1,5 +1,6 @@
 import { CREATE_PHOTO, UPDATE_PHOTO, DELETE_PHOTO } from "../constants/photos";
 import axios from "axios";
+import { CREATE_COLLECTION } from "../constants/collections";
 // const searchUrl = "https://f1-mern-app-api.herokuapp.com";
 
 // let photos = [];
@@ -64,8 +65,21 @@ var photos = [
   }
 ];
 
+var collections = [
+  {
+    width: 7680,
+    height: 4320,
+    image:
+      "https://images.unsplash.com/photo-1562887189-7c2ae6ace6dc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjg3NDk1fQ",
+    alt_description: "Honest makeup palette",
+    likes: 30,
+    username: "honest"
+  }
+];
+
 var DEFAULT_STATE = {
-  photos
+  photos,
+  collections
 };
 
 export default function photoReducer(state = DEFAULT_STATE, action) {
@@ -94,6 +108,11 @@ export default function photoReducer(state = DEFAULT_STATE, action) {
         photos: state.photos.filter((photo, id) => {
           return id !== action.payload;
         })
+      };
+    case CREATE_COLLECTION:
+      return {
+        ...state,
+        collections: [...state.collections, action.payload]
       };
     default:
       return state;
