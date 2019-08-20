@@ -1,6 +1,5 @@
 import React from "react";
 import "./PhotoRow.css";
-
 const PhotoRow = ({
   //   name = "",
   //   birthplace = "",

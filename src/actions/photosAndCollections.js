@@ -45,10 +45,10 @@ export const deleteCollection = id => ({
   payload: id
 });
 
-export const updateCollection = (id, updatedCOLLECTION) => ({
+export const updateCollection = (id, updatedCollection) => ({
   type: UPDATE_COLLECTION,
   payload: {
     id,
-    updatedCOLLECTION
+    updatedCollection
   }
 });
