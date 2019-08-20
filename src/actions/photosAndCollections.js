@@ -11,10 +11,6 @@ export function createNewPhoto(image) {
   return {
     type: CREATE_PHOTO,
     payload: {
-      // name,
-      // birthplace,
-      // team,
-      // rank,
       image
     }
   };

@@ -22,7 +22,7 @@ export default class AddPhoto extends Component {
   }
   handleSubmit(evt) {
     evt.preventDefault();
-    let image = evt.target[0].image;
+    let image = evt.target[0].value;
     // let birthplace = evt.target[1].value;
     // let team = evt.target[2].value;
     // let rank = evt.target[3].value;
