@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./AddPhoto.css";
 import { createNewPhoto } from "../../actions/photosAndCollections";
+import { createNewCollection } from "../../actions/photosAndCollections";
 
 export default class AddPhoto extends Component {
   constructor(props) {
@@ -29,6 +30,7 @@ export default class AddPhoto extends Component {
     // let image = evt.target[4].value;
 
     this.props.dispatch(createNewPhoto(image));
+    this.props.dispatch(createNewCollection(image));
 
     evt.target[0].value = "";
     // evt.target[1].value = "";
