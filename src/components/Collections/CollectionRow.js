@@ -51,8 +51,8 @@ const CollectionRow = ({
       {/* <select
         className="teamChanger"
         onChange={onChange}
-        name="team"
-        value={team}
+        name="tags"
+        value={tags}
       >
         <option value="Mercades">Mercades</option>
         <option value="Red Bull">Red Bull</option>

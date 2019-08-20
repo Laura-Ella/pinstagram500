@@ -7,22 +7,23 @@ import {
   DELETE_COLLECTION
 } from "../constants/photosAndCollections";
 
-export function createNewPhoto(image) {
+export function createNewPhoto(image, tag) {
   return {
     type: CREATE_PHOTO,
     payload: {
-      image
+      image,
+      tag
     }
   };
 }
 
 export const deletePhoto = id => ({ type: DELETE_PHOTO, payload: id });
 
-export const updatePhoto = (id, updatedPHOTO) => ({
+export const updatePhoto = (id, updatedPhoto) => ({
   type: UPDATE_PHOTO,
   payload: {
     id,
-    updatedPHOTO
+    updatedPhoto
   }
 });
 

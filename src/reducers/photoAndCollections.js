@@ -59,7 +59,8 @@ var photos = [
       "https://images.unsplash.com/photo-1562887189-7c2ae6ace6dc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjg3NDk1fQ",
     alt_description: "Honest makeup palette",
     likes: 30,
-    username: "honest"
+    username: "honest",
+    tag: ""
   },
   {
     width: 7680,
@@ -68,7 +69,8 @@ var photos = [
       "https://images.unsplash.com/photo-1566241966316-befc8de1ec90?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjg3NDk1fQ",
     alt_description: "n/a",
     likes: 1,
-    username: "gersonrepreza"
+    username: "gersonrepreza",
+    tag: ""
   }
 ];
 
@@ -105,7 +107,7 @@ export default function photoAndCollectionsReducer(
           }
           return {
             ...photo,
-            ...action.payload.updatedphoto
+            ...action.payload.updatedPhoto
           };
         })
       };
