@@ -27,7 +27,7 @@ export const updatePhoto = (id, updatedPhoto) => ({
   }
 });
 
-export function createNewCollection(image) {
+export function createNewCollection(image, tag) {
   return {
     type: CREATE_COLLECTION,
     payload: {
@@ -35,7 +35,8 @@ export function createNewCollection(image) {
       // birthplace,
       // team,
       // rank,
-      image
+      image,
+      tag
     }
   };
 }
