@@ -92,12 +92,6 @@ export default function photoAndCollectionsReducer(
   state = DEFAULT_STATE,
   action
 ) {
-  if (action.type === UPDATE_PHOTO) {
-    return {
-      ...state,
-      collections: [...state.collections, action.payload.updatedPhoto]
-    };
-  }
   switch (action.type) {
     case CREATE_PHOTO:
       return {
@@ -111,12 +105,13 @@ export default function photoAndCollectionsReducer(
           if (index !== action.payload.id) {
             return photo;
           }
-
           return {
             ...photo,
             ...action.payload.updatedPhoto
           };
-        })
+        }),
+
+        collections: [...state.collections, action.payload.updatedPhoto]
       };
     case DELETE_PHOTO:
       return {
@@ -125,11 +120,11 @@ export default function photoAndCollectionsReducer(
           return id !== action.payload;
         })
       };
-    case CREATE_COLLECTION:
-      return {
-        ...state,
-        collections: [...state.collections, action.payload]
-      };
+    // case CREATE_COLLECTION:
+    //   return {
+    //     ...state,
+    //     collections: [...state.collections, action.payload]
+    //   };
     case UPDATE_COLLECTION:
       return {
         ...state,

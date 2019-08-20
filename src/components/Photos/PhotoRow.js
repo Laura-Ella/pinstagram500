@@ -45,15 +45,32 @@ const PhotoRow = ({
         </div> */}
       </div>
 
-      <select
+      {/* <select
         className="teamChanger"
         onChange={onChange}
+        name2="image"
+        value2={image}
         name="tag"
         value={tag}
       >
         <option value="" />
-        <option value="Earth">#Earth</option>
+        <option value="Earth" value2={image}>
+          #Earth
+        </option>
         <option value="Computer">#Computer</option>
+      </select> */}
+      <select
+        className="teamChanger"
+        onChange={onChange}
+        name="image"
+        value={image}
+        value2={tag}
+      >
+        <option value={image} />
+        <option value={image} value2={"Earth"}>
+          #Earth
+        </option>
+        <option value={image}>#Computer</option>
       </select>
 
       <button className="delete" onClick={onClick}>
