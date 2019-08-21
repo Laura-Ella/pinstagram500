@@ -48,7 +48,7 @@ getDataPhotos().then(res => {
     return x;
   });
   for (let i = 0; i < photos2.length; i++) {
-    photos.push(photos2[i]);
+    photos.push(photos2[0]);
   }
 });
 
