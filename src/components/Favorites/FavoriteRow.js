@@ -10,10 +10,10 @@ const FavoriteRow = ({
 }) => (
   <div>
     <div>
-      <p>{title}</p>
+      {/* <p>{title}</p>
       <p>
         Tags: <span className="tags">{`${tags}`}</span>
-      </p>
+      </p> */}
     </div>
     <div className="contain">
       <div

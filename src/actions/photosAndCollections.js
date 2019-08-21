@@ -10,11 +10,16 @@ import {
   DELETE_FAVORITE
 } from "../constants/photosAndCollections";
 
-export function createNewPhoto(url) {
+export function createNewPhoto(url, username, description, height, width, tag) {
   return {
     type: CREATE_PHOTO,
     payload: {
-      url
+      url,
+      username,
+      description,
+      height,
+      width,
+      tag
     }
   };
 }

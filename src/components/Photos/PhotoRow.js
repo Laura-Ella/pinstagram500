@@ -2,12 +2,10 @@ import React from "react";
 import "./PhotoRow.css";
 
 const PhotoRow = ({
-  username = "",
-  width = "",
-  height = "",
   description = "",
-  url = "",
   tag = "",
+  url = "",
+  username = "",
 
   onChange = () => {},
   onClick = () => {}
@@ -19,8 +17,7 @@ const PhotoRow = ({
         style={{
           backgroundImage: `url(${url})`,
           backgroundPosition: "center",
-          backgroundHeight: height,
-          backgroundWidth: width,
+          backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
           position: "relative",
           border: "2px solid black",
@@ -32,6 +29,10 @@ const PhotoRow = ({
             <p>
               <span className="tagDisplay">User: </span>
               {username}
+            </p>
+            <p>
+              <span className="tagDisplay">Description: </span>
+              {description}
             </p>
             <p>
               <span className="tagDisplay">Tag: </span>

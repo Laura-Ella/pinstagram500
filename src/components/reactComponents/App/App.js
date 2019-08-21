@@ -9,12 +9,14 @@ import About from "../About/About";
 import "./App.css";
 
 const searchUrl = "https://pinstagram500-api.herokuapp.com";
+const searchUrlCollections = "https://pinstagram500-api.herokuapp.com";
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      photos: []
+      photos: [],
+      collections: []
     };
   }
   componentDidMount() {
@@ -22,9 +24,20 @@ class App extends Component {
       .get(searchUrl)
       .then(response => {
         this.setState({
-          drivers: response.data
+          photos: response.data
         });
-        console.log(this.state.drivers);
+        console.log(this.state.photos);
+      })
+      .catch(err => {
+        console.error(err);
+      });
+    axios
+      .get(searchUrlCollections)
+      .then(response => {
+        this.setState({
+          collections: response.data
+        });
+        console.log(this.state.collections);
       })
       .catch(err => {
         console.error(err);
@@ -79,14 +92,32 @@ class App extends Component {
         </nav>
         <main>
           {/* <Route path="/" exact component={Home} /> */}
-          <Route path="/" exact component={Photos} />
+
+          <Route
+            path="/"
+            exact
+            render={routerProps => (
+              <Photos photoData={this.state.photos} {...routerProps} />
+            )}
+          />
+
           {/* {/* <Route path="/collections" exact component={Collections} /> */}
-          <Route path="/collections" exact component={Collections} />
+          <Route
+            path="/collections"
+            exact
+            render={routerProps => (
+              <Collections
+                collectionData={this.state.collections}
+                {...routerProps}
+              />
+            )}
+          />
           <Route path="/favorites" exact component={Favorites} />
 
           <div>
             <Route path="/upload" exact component={AddNewPhoto} />
           </div>
+
           <Route path="/about" exact component={About} />
           {/* <div className="appCenter">
             <div className="appGrid">

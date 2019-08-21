@@ -41,6 +41,7 @@ async function getDataPhotos() {
 getDataPhotos().then(res => {
   let photos2 = res.map(list => {
     let x = {
+      id: list._id,
       username: list.username,
       width: list.width,
       height: list.height,
@@ -51,7 +52,7 @@ getDataPhotos().then(res => {
     return x;
   });
   for (let i = 0; i < photos2.length; i++) {
-    photos.push(photos2[0]);
+    photos.push(photos2[i]);
   }
 });
 
@@ -97,8 +98,6 @@ getDataCollections().then(res => {
     });
     return databaseTags;
   });
-  console.log(databaseCollectionsTags);
-
   for (let i = 0; i < databaseCollections.length; i++) {
     collections.push({
       title: databaseCollectionsTitle[i],
@@ -106,7 +105,6 @@ getDataCollections().then(res => {
       url: databaseCollectionsUrls[i]
     });
   }
-  console.log(collections);
 });
 
 export default function photoAndCollectionsReducer(
@@ -134,6 +132,14 @@ export default function photoAndCollectionsReducer(
         favorites: [...state.favorites, action.payload.updatedPhoto]
       };
     case DELETE_PHOTO:
+      axios
+        .delete(`${searchUrl}${action.payload}`, action.payload)
+        .then(response => {
+          // console.log(response);
+        })
+        .catch(err => {
+          console.log(err);
+        });
       return {
         ...state,
         photos: state.photos.filter((photo, id) => {
