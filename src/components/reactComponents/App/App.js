@@ -70,7 +70,8 @@ class App extends Component {
     super(props);
     this.state = {
       photos: [],
-      collections2
+      collections2,
+      favorites: []
     };
   }
 
@@ -123,11 +124,6 @@ class App extends Component {
               <Link className="hoverable" to="/favorites">
                 <div>
                   <p>[ Favorites ]</p>
-                </div>
-              </Link>
-              <Link className="hoverable" to="/sign-in">
-                <div>
-                  <p>[ Sign-In ]</p>
                 </div>
               </Link>
               <Link className="hoverable" to="/about">

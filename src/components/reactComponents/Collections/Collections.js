@@ -4,36 +4,13 @@ import "./Collections.css";
 
 class Collections extends Component {
   render() {
-    // let databaseCollectionsUrls = this.props.collectionData.map(list => {
-    //   let rawUrls = list.preview_photos.map(elements => {
-    //     return elements.urls.raw;
-    //   });
-    //   return rawUrls;
-    // });
-    // console.log(databaseCollectionsUrls);
-    //   let databaseRaw = list.urls.map(elements => {
-    //     return elements.urls.raw;
-    //   });
-    //   return databaseRaw;
-
-    // let databaseCollectionsUrls2 = databaseCollectionsUrls.map(list => {
-    //   return list[0].urls;
-    //     let databaseRaw = list.urls.map(elements => {
-    //       return elements.urls.raw;
-    //     });
-    //     return databaseRaw;
-    // });
-    // console.log(databaseCollectionsUrls2);
-
     let collection = this.props.collectionData.map((collection, index) => {
-      // collection.preview_photos.map(elements => {
-      //   console.log(elements.urls.raw);
       return (
         <div
           className="driverDivs"
           key={index}
           style={{
-            backgroundImage: `url(${collection.url})`,
+            backgroundImage: `url(${collection.urls[0]})`,
             backgroundPosition: "center",
             backgroundSize: "250px 250px",
             backgroundRepeat: "no-repeat",
