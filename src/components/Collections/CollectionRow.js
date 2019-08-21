@@ -34,9 +34,18 @@ const CollectionRow = ({
           backgroundImage: `url(${urls[2]})`
         }}
       /> */}
-      <button className="delete" onClick={onClick}>
+      <select
+        className="teamChanger"
+        onChange={onChange}
+        name="urls"
+        value={urls}
+      >
+        <option value={urls} />
+        <option value={urls}>Add to Favorites</option>
+      </select>
+      {/* <button className="delete" onClick={onClick}>
         Add to Favorites
-      </button>
+      </button> */}
     </div>
   </div>
 );

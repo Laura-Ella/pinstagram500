@@ -4,7 +4,7 @@ import "./FavoriteRow.css";
 const FavoriteRow = ({
   title = "",
   tags = " ",
-  urls = "",
+  url = "",
   onChange = () => {},
   onClick = () => {}
 }) => (
@@ -19,7 +19,7 @@ const FavoriteRow = ({
       <div
         className="photo"
         style={{
-          backgroundImage: `url(${urls})`
+          backgroundImage: `url(${url})`
         }}
       />
       {/* <div
@@ -41,9 +41,7 @@ const FavoriteRow = ({
         value={tags}
       >
         <option value="" />
-        <option value="Earth" value2="Earth">
-          #Earth
-        </option>
+        <option value="Earth">#Earth</option>
         <option value="Computer">#Computer</option>
       </select>
       <button className="delete" onClick={onClick}>

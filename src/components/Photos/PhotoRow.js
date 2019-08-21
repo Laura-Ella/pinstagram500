@@ -9,8 +9,8 @@ const PhotoRow = ({
   url = "",
   tag = "",
 
-  onChange = () => {},
-  onClick = () => {}
+  onChange = () => {}
+  // onClick = () => {}
 }) => (
   <div>
     <div className="contain">
@@ -27,7 +27,7 @@ const PhotoRow = ({
           textAlign: "left"
         }}
       >
-        {/* <div className="textContainer">
+        <div className="textContainer">
           <div className="text">
             <p>
               <span className="tagDisplay">User: </span>
@@ -38,7 +38,7 @@ const PhotoRow = ({
               {tag}
             </p>
 
-            <p>
+            {/* <p>
               <span className="description">Birthplace: </span>
               {birthplace}
             </p>
@@ -49,26 +49,23 @@ const PhotoRow = ({
             <p>
               <span className="description">Rank: </span>
               {rank}
-            </p>
+            </p> */}
           </div>
-        </div> */}
+        </div>
       </div>
-      {/* <select
+      <select
         className="teamChanger"
         onChange={onChange}
-        name="tag"
-        value={tag}
+        name="url"
+        value={url}
       >
-        <option value="" />
-        <option value="Earth" value2="Earth">
-          #Earth
-        </option>
-        <option value="Computer">#Computer</option>
-      </select> */}
+        <option value={url} />
+        <option value={url}>Add to Favorites</option>
+      </select>
 
-      <button className="delete" onClick={onClick}>
+      {/* <button className="delete" onClick={onClick}>
         Add to Favorites
-      </button>
+      </button> */}
     </div>
   </div>
 );
