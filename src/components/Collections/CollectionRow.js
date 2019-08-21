@@ -3,7 +3,7 @@ import "./CollectionRow.css";
 
 const CollectionRow = ({
   title = "",
-  tags = "",
+  tags = " ",
   urls = "",
   onChange = () => {},
   onClick = () => {}
@@ -11,16 +11,18 @@ const CollectionRow = ({
   <div>
     <div>
       <p>{title}</p>
-      <p>Tag: {tags}</p>
+      <p>
+        Tags: <span className="tags">{`${tags}`}</span>
+      </p>
     </div>
     <div className="contain">
       <div
         className="photo"
         style={{
-          backgroundImage: `url(${urls[0]})`
+          backgroundImage: `url(${urls})`
         }}
       />
-      <div
+      {/* <div
         className="photo"
         style={{
           backgroundImage: `url(${urls[1]})`
@@ -31,7 +33,7 @@ const CollectionRow = ({
         style={{
           backgroundImage: `url(${urls[2]})`
         }}
-      />
+      /> */}
       <button className="delete" onClick={onClick}>
         X
       </button>

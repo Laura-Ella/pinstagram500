@@ -94,6 +94,7 @@ getDataCollections().then(res => {
     });
     return databaseTags;
   });
+  console.log(databaseCollectionsTags);
 
   for (let i = 0; i < databaseCollections.length; i++) {
     collections.push({
