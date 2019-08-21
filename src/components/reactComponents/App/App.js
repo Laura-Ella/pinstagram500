@@ -9,7 +9,8 @@ import About from "../About/About";
 import "./App.css";
 
 const searchUrl = "https://pinstagram500-api.herokuapp.com";
-const searchUrlCollections = "https://pinstagram500-api.herokuapp.com";
+const searchUrlCollections =
+  "https://pinstagram500-api.herokuapp.com/collection";
 
 class App extends Component {
   constructor(props) {
@@ -44,14 +45,6 @@ class App extends Component {
       });
   }
   render() {
-    const opts = {
-      height: "800",
-      width: "1200",
-      playerVars: {
-        // https://developers.google.com/youtube/player_parameters
-        autoplay: 1
-      }
-    };
     return (
       <div>
         <nav>

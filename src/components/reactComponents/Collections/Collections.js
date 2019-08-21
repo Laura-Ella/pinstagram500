@@ -4,38 +4,58 @@ import "./Collections.css";
 
 class Collections extends Component {
   render() {
+    let databaseCollectionsUrls = this.props.collectionData.map(list => {
+      let rawUrls = list.preview_photos.map(elements => {
+        return elements.urls.raw;
+      });
+      return rawUrls;
+    });
+    console.log(databaseCollectionsUrls);
+    //   let databaseRaw = list.urls.map(elements => {
+    //     return elements.urls.raw;
+    //   });
+    //   return databaseRaw;
+
+    // let databaseCollectionsUrls2 = databaseCollectionsUrls.map(list => {
+    //   return list[0].urls;
+    //     let databaseRaw = list.urls.map(elements => {
+    //       return elements.urls.raw;
+    //     });
+    //     return databaseRaw;
+    // });
+    // console.log(databaseCollectionsUrls2);
+
     let collection = this.props.collectionData.map((collection, index) => {
-      return (
-        <div
-          className="driverDivs"
-          key={index}
-          style={{
-            backgroundImage: `url(${collection.url})`,
-            backgroundPosition: "center",
-            backgroundSize: "250px 250px",
-            backgroundRepeat: "no-repeat",
-            position: "relative",
-            textAlign: "center"
-          }}
-        >
-          <div className="textContainer">
-            <div className="text">
-              <p>
-                <span className="description">User: </span>
-                {collection.username}
-              </p>
-              <p>
-                <span className="description">Description: </span>
-                {collection.description}
-              </p>
-              <p>
-                <span className="description">Tag: </span>
-                {collection.team}
-              </p>
+      collection.preview_photos.map(elements => {
+        console.log(elements.urls.raw);
+        return (
+          <div
+            className="driverDivs"
+            key={index}
+            style={{
+              backgroundImage: `url(${collection.preview_photos.urls.raw})`,
+              backgroundPosition: "center",
+              backgroundSize: "250px 250px",
+              backgroundRepeat: "no-repeat",
+              position: "relative",
+              textAlign: "center"
+            }}
+          >
+            <div className="textContainer">
+              <div className="text">
+                <p>
+                  <span className="description">Title: </span>
+                  {collection.title}
+                </p>
+                <p>
+                  <span className="description">Tags: </span>
+                  {}
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-      );
+        );
+      });
     });
     return (
       <div>
@@ -57,6 +77,7 @@ class Collections extends Component {
               </div>
             </Link>
           </div> */}
+          <p>{collection.title}</p>
           <div className="driverGrid">{collection}</div>
         </div>
       </div>

@@ -5,6 +5,7 @@ import "./Photos.css";
 class Photos extends Component {
   render() {
     let photo = this.props.photoData.map((photo, index) => {
+      console.log(photo.url);
       return (
         <div
           className="driverDivs"
@@ -21,16 +22,20 @@ class Photos extends Component {
           <div className="textContainer">
             <div className="text">
               <p>
-                <span className="description">User: </span>
-                {photo.username}
+                <span className="description">Name: </span>
+                {photo.name}
               </p>
               <p>
-                <span className="description">Description: </span>
-                {photo.description}
+                <span className="description">Birthplace: </span>
+                {photo.birthplace}
               </p>
               <p>
-                <span className="description">Tag: </span>
+                <span className="description">Team: </span>
                 {photo.team}
+              </p>
+              <p>
+                <span className="description">Rank: </span>
+                {photo.rank}
               </p>
             </div>
           </div>
@@ -40,7 +45,7 @@ class Photos extends Component {
     return (
       <div>
         <div>
-          {/* <div className="edits">
+          <div className="edits">
             <Link to="/drivers/remove">
               <div className="editDivs3">
                 <p>Remove</p>
@@ -56,7 +61,7 @@ class Photos extends Component {
                 <p>Add</p>
               </div>
             </Link>
-          </div> */}
+          </div>
           <div className="driverGrid">{photo}</div>
         </div>
       </div>
