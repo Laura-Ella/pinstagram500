@@ -10,12 +10,11 @@ import {
   DELETE_FAVORITE
 } from "../constants/photosAndCollections";
 
-export function createNewPhoto(image, tag) {
+export function createNewPhoto(url) {
   return {
     type: CREATE_PHOTO,
     payload: {
-      image,
-      tag
+      url
     }
   };
 }
@@ -61,12 +60,8 @@ export function createNewFavorite(image, tag) {
   return {
     type: CREATE_FAVORITE,
     payload: {
-      // name,
-      // birthplace,
-      // team,
-      // rank,
-      image,
-      tag
+      image
+      // tag
     }
   };
 }

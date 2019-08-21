@@ -10,7 +10,7 @@ export default class AddPhoto extends Component {
       // birthplace: "",
       // team: "",
       // rank: 1,
-      image: ""
+      url: ""
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -22,13 +22,13 @@ export default class AddPhoto extends Component {
   }
   handleSubmit(evt) {
     evt.preventDefault();
-    let image = evt.target[0].value;
+    let url = evt.target[0].value;
     // let birthplace = evt.target[1].value;
     // let team = evt.target[2].value;
     // let rank = evt.target[3].value;
     // let image = evt.target[4].value;
 
-    this.props.dispatch(createNewPhoto(image));
+    this.props.dispatch(createNewPhoto(url));
 
     evt.target[0].value = "";
     // evt.target[1].value = "";
