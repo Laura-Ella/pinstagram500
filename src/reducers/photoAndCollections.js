@@ -115,11 +115,6 @@ export default function photoAndCollectionsReducer(
   action
 ) {
   switch (action.type) {
-    case CREATE_PHOTO:
-      return {
-        ...state,
-        photos: [...state.photos, action.payload]
-      };
     case UPDATE_PHOTO:
       return {
         ...state,
@@ -132,22 +127,8 @@ export default function photoAndCollectionsReducer(
             ...action.payload.updatedPhoto
           };
         }),
-
-        // collections: [...state.collections, action.payload.updatedPhoto],
         favorites: [...state.favorites, action.payload.updatedPhoto]
       };
-    case DELETE_PHOTO:
-      return {
-        ...state,
-        photos: state.photos.filter((photo, id) => {
-          return id !== action.payload;
-        })
-      };
-    // case CREATE_COLLECTION:
-    //   return {
-    //     ...state,
-    //     collections: [...state.collections, action.payload]
-    //   };
     case UPDATE_COLLECTION:
       return {
         ...state,
@@ -159,14 +140,8 @@ export default function photoAndCollectionsReducer(
             ...collection,
             ...action.payload.updatedCollection
           };
-        })
-      };
-    case DELETE_COLLECTION:
-      return {
-        ...state,
-        collections: state.collections.filter((collection, id) => {
-          return id !== action.payload;
-        })
+        }),
+        favorites: [...state.favorites, action.payload.updatedPhoto]
       };
     case UPDATE_FAVORITE:
       return {

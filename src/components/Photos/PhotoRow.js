@@ -27,7 +27,7 @@ const PhotoRow = ({
           textAlign: "left"
         }}
       >
-        <div className="textContainer">
+        {/* <div className="textContainer">
           <div className="text">
             <p>
               <span className="tagDisplay">User: </span>
@@ -38,7 +38,7 @@ const PhotoRow = ({
               {tag}
             </p>
 
-            {/* <p>
+            <p>
               <span className="description">Birthplace: </span>
               {birthplace}
             </p>
@@ -49,11 +49,11 @@ const PhotoRow = ({
             <p>
               <span className="description">Rank: </span>
               {rank}
-            </p> */}
+            </p>
           </div>
-        </div>
+        </div> */}
       </div>
-      <select
+      {/* <select
         className="teamChanger"
         onChange={onChange}
         name="tag"
@@ -64,10 +64,10 @@ const PhotoRow = ({
           #Earth
         </option>
         <option value="Computer">#Computer</option>
-      </select>
+      </select> */}
 
       <button className="delete" onClick={onClick}>
-        X
+        Add to Favorites
       </button>
     </div>
   </div>

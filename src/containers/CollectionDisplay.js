@@ -16,7 +16,7 @@ const Collection = ({ collections, onRemove, onUpdate }) => {
           {...d}
           onClick={e => {
             e.preventDefault();
-            onRemove(i);
+            onUpdate(i);
           }}
           onChange={e => {
             e.preventDefault();
@@ -33,7 +33,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  onRemove: id => dispatch(deleteCollection(id)),
+  // onRemove: id => dispatch(deleteCollection(id)),
   onUpdate: (id, update) => dispatch(updateCollection(id, update))
 });
 

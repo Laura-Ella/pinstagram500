@@ -34,6 +34,18 @@ const FavoriteRow = ({
           backgroundImage: `url(${urls[2]})`
         }}
       /> */}
+      <select
+        className="teamChanger"
+        onChange={onChange}
+        name="tags"
+        value={tags}
+      >
+        <option value="" />
+        <option value="Earth" value2="Earth">
+          #Earth
+        </option>
+        <option value="Computer">#Computer</option>
+      </select>
       <button className="delete" onClick={onClick}>
         X
       </button>

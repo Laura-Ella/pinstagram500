@@ -35,7 +35,7 @@ const CollectionRow = ({
         }}
       /> */}
       <button className="delete" onClick={onClick}>
-        X
+        Add to Favorites
       </button>
     </div>
   </div>
