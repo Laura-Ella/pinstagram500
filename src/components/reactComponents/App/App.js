@@ -9,17 +9,71 @@ import About from "../About/About";
 import "./App.css";
 
 const searchUrl = "https://pinstagram500-api.herokuapp.com";
-const searchUrlCollections =
+const searchUrlCollection =
   "https://pinstagram500-api.herokuapp.com/collection";
+
+let collections2 = [];
+console.log(collections2);
+async function getDataCollections() {
+  try {
+    let res = await axios({
+      url: searchUrlCollection,
+      method: "get",
+      headers: {
+        "Content-Type": "application/json"
+      }
+    });
+    return res.data;
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+getDataCollections().then(res => {
+  let databaseCollections = res.map(list => {
+    let x = {
+      title: list.title,
+      tags: list.tags,
+      urls: list.preview_photos
+    };
+    return x;
+  });
+
+  let databaseCollectionsTitle = databaseCollections.map(list => {
+    return list.title;
+  });
+
+  let databaseCollectionsUrls = databaseCollections.map(list => {
+    let databaseRaw = list.urls.map(elements => {
+      return elements.urls.raw;
+    });
+    return databaseRaw;
+  });
+
+  let databaseCollectionsTags = databaseCollections.map(list => {
+    let databaseTags = list.tags.map(elements => {
+      return elements.title;
+    });
+    return databaseTags;
+  });
+  for (let i = 0; i < databaseCollections.length; i++) {
+    collections2.push({
+      title: databaseCollectionsTitle[i],
+      tags: databaseCollectionsTags[i],
+      url: databaseCollectionsUrls[i]
+    });
+  }
+});
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       photos: [],
-      collections: []
+      collections2
     };
   }
+
   componentDidMount() {
     axios
       .get(searchUrl)
@@ -32,18 +86,19 @@ class App extends Component {
       .catch(err => {
         console.error(err);
       });
-    axios
-      .get(searchUrlCollections)
-      .then(response => {
-        this.setState({
-          collections: response.data
-        });
-        console.log(this.state.collections);
-      })
-      .catch(err => {
-        console.error(err);
-      });
+    // axios
+    //   .get(searchUrlCollection)
+    //   .then(response => {
+    //     this.setState({
+    //       collections: response.data
+    //     });
+    //     console.log(this.state.collections);
+    //   })
+    //   .catch(err => {
+    //     console.error(err);
+    //   });
   }
+
   render() {
     return (
       <div>
@@ -100,7 +155,7 @@ class App extends Component {
             exact
             render={routerProps => (
               <Collections
-                collectionData={this.state.collections}
+                collectionData={this.state.collections2}
                 {...routerProps}
               />
             )}

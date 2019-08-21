@@ -41,7 +41,7 @@ async function getDataPhotos() {
 getDataPhotos().then(res => {
   let photos2 = res.map(list => {
     let x = {
-      id: list._id,
+      _id: list._id,
       username: list.username,
       width: list.width,
       height: list.height,
@@ -132,17 +132,9 @@ export default function photoAndCollectionsReducer(
         favorites: [...state.favorites, action.payload.updatedPhoto]
       };
     case DELETE_PHOTO:
-      axios
-        .delete(`${searchUrl}${action.payload}`, action.payload)
-        .then(response => {
-          // console.log(response);
-        })
-        .catch(err => {
-          console.log(err);
-        });
       return {
         ...state,
-        photos: state.photos.filter((photo, id) => {
+        photos: state.photos.filter((photos, id) => {
           return id !== action.payload;
         })
       };

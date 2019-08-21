@@ -1,14 +1,28 @@
 import React from "react";
 import "./PhotoRow.css";
+import { deletePhoto, updatePhoto } from "../../actions/photosAndCollections";
+import axios from "axios";
 
 const PhotoRow = ({
+  _id = "",
   description = "",
   tag = "",
   url = "",
   username = "",
 
   onChange = () => {},
-  onClick = () => {}
+  onClick = () => {
+    axios
+      .delete(
+        `${"https://pinstagram500-api.herokuapp.com/5d5db23bfe5c9a001701c3a6"}`
+      )
+      .then(response => {
+        console.log(response);
+      })
+      .catch(err => {
+        console.error(err);
+      });
+  }
 }) => (
   <div>
     <div className="contain">
@@ -30,6 +44,11 @@ const PhotoRow = ({
               <span className="tagDisplay">User: </span>
               {username}
             </p>
+            <p>
+              <span className="tagDisplay">ID: </span>
+              {_id}
+            </p>
+
             <p>
               <span className="tagDisplay">Description: </span>
               {description}

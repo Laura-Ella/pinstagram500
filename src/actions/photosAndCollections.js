@@ -24,7 +24,7 @@ export function createNewPhoto(url, username, description, height, width, tag) {
   };
 }
 
-export const deletePhoto = id => ({ type: DELETE_PHOTO, payload: id });
+export const deletePhoto = _id => ({ type: DELETE_PHOTO, payload: _id });
 
 export const updatePhoto = (id, updatedPhoto) => ({
   type: UPDATE_PHOTO,
