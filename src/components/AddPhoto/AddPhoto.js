@@ -11,7 +11,10 @@ export default class AddPhoto extends Component {
       // birthplace: "",
       // team: "",
       // rank: 1,
-      url: ""
+      description: "",
+      username: "",
+      url: "",
+      tag: ""
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -42,6 +45,36 @@ export default class AddPhoto extends Component {
               className="extend"
               type="text"
               name="url"
+              // name={this.state.url}
+              onChange={this.handleChange}
+            />
+          </div>
+          <div className="user">
+            <p>User</p>
+            <input
+              className="extend"
+              type="text"
+              name="username"
+              // name={this.state.url}
+              onChange={this.handleChange}
+            />
+          </div>
+          <div className="description">
+            <p>Description</p>
+            <input
+              className="extend"
+              type="text"
+              name="description"
+              // name={this.state.url}
+              onChange={this.handleChange}
+            />
+          </div>
+          <div className="tag">
+            <p>Tag</p>
+            <input
+              className="extend"
+              type="text"
+              name="tag"
               // name={this.state.url}
               onChange={this.handleChange}
             />
