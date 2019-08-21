@@ -17,7 +17,7 @@ const CollectionRow = ({
       <div
         className="photo"
         style={{
-          backgroundImage: `url(${urls})`,
+          backgroundImage: `url(${urls[0]})`,
           backgroundPosition: "center",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
@@ -47,25 +47,18 @@ const CollectionRow = ({
           </div>
         </div> */}
       </div>
-
-      {/* <select
-        className="teamChanger"
-        onChange={onChange}
-        name="tags"
-        value={tags}
-      >
-        <option value="Mercades">Mercades</option>
-        <option value="Red Bull">Red Bull</option>
-        <option value="Ferrari">Ferrari</option>
-        <option value="McLaren">McLaren</option>
-        <option value="Toro Rosso">Toro Rosso</option>
-        <option value="Renault">Renault</option>
-        <option value="Haas">Haas</option>
-        <option value="McLaren">McLaren</option>
-        <option value="Racing Point">Racing Point</option>
-        <option value="Williams">Williams</option>
-      </select> */}
-
+      <div
+        className="photo"
+        style={{
+          backgroundImage: `url(${urls[1]})`,
+          backgroundPosition: "center",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+          position: "relative",
+          textAlign: "center",
+          border: "2px solid black"
+        }}
+      />
       <button className="delete" onClick={onClick}>
         X
       </button>

@@ -103,16 +103,6 @@ getDataCollections().then(res => {
     });
   }
   console.log(collections);
-
-  // let databaseCollectionsRaw = databaseCollectionsUrls[0].map(list => {
-  //   return list.urls.raw;
-  // });
-  // console.log(databaseCollectionsRaw);
-
-  // let databaseCollectionsRaw = databaseCollectionsUrls.map(list => {
-  //   return list.raw;
-  // });
-  // console.log(databaseCollectionsRaw);
 });
 
 export default function photoAndCollectionsReducer(
