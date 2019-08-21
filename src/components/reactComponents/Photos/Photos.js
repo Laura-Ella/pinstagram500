@@ -4,11 +4,20 @@ import "./Photos.css";
 import axios from "axios";
 
 class Photos extends Component {
+  deleteContact(id) {
+    // <-- declare id parameter
+    axios.delete(`https://pinstagram500-api.herokuapp.com/${id}`).then(res => {
+      const photos = res.data;
+      this.setState({ photos });
+    });
+  }
   onClick = () => {
+    const apiUrl = "https://pinstagram500-api.herokuapp.com/";
+    const id = this.photo._id;
+    const url = `${apiUrl}${id}`;
+
     axios
-      .delete(
-        `${"https://pinstagram500-api.herokuapp.com/5d5dc756d8e8cf001721d787"}`
-      )
+      .delete(url)
       .then(response => {
         console.log(response);
       })
@@ -16,9 +25,9 @@ class Photos extends Component {
         console.error(err);
       });
   };
+  onChange = () => {};
   render() {
     let photo = this.props.photoData.map((photo, index) => {
-      console.log(photo.url);
       return (
         <div
           className="driverDivs"
@@ -39,6 +48,10 @@ class Photos extends Component {
                 {photo.name}
               </p>
               <p>
+                <span className="description">ID: </span>
+                {photo._id}
+              </p>
+              <p>
                 <span className="description">Birthplace: </span>
                 {photo.birthplace}
               </p>
@@ -52,7 +65,10 @@ class Photos extends Component {
               </p>
             </div>
           </div>
-          <button className="delete" onClick={this.onClick}>
+          <button
+            className="delete"
+            onClick={() => this.deleteContact(photo._id)}
+          >
             X
           </button>
         </div>
