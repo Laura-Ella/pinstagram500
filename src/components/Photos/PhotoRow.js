@@ -7,7 +7,11 @@ const PhotoRow = ({
   image = "",
   tag = "",
   onChange = () => {},
-  onClick = () => {}
+  onClick = () => {
+    if (this.refs.imageType) {
+      console.log(this.refs.imageType.value);
+    }
+  }
 }) => (
   <div>
     <div className="contain">
@@ -67,7 +71,7 @@ const PhotoRow = ({
         value2={tag}
       >
         <option value={image} />
-        <option value={image} value2={"Earth"}>
+        <option value={image} value2="Earth">
           #Earth
         </option>
         <option value={image}>#Computer</option>
