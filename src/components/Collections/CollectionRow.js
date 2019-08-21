@@ -3,7 +3,7 @@ import "./CollectionRow.css";
 
 const CollectionRow = ({
   title = "",
-  tag = "",
+  tags = "",
   urls = "",
   onChange = () => {},
   onClick = () => {}
@@ -11,7 +11,7 @@ const CollectionRow = ({
   <div>
     <div>
       <p>{title}</p>
-      <p>Tag: {tag}</p>
+      <p>Tag: {tags}</p>
     </div>
     <div className="contain">
       <div

@@ -83,6 +83,14 @@ getDataCollections().then(res => {
     });
     return databaseRaw;
   });
+
+  let databaseCollectionsTags = databaseCollections.map(list => {
+    let databaseTags = list.tags.map(elements => {
+      return elements.title;
+    });
+    return databaseTags;
+  });
+  console.log(databaseCollectionsTags);
   // for (let i = 0; i < databaseCollections.length; i++) {
   //   collections.push(databaseCollections[i]);
   // }
@@ -90,6 +98,7 @@ getDataCollections().then(res => {
 
   for (let i = 0; i < databaseCollectionsUrls.length; i++) {
     collections.push({
+      tags: databaseCollectionsTags[i],
       urls: databaseCollectionsUrls[i]
     });
   }
