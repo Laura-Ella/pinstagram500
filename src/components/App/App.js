@@ -19,7 +19,8 @@ class App extends Component {
             <div>
               <Link to="/">
                 <div className="pinstagramTitleDiv">
-                  <p className="navHeaderFont">Pinstagram500</p>
+                  <p>Pinstagram500</p>
+                  <p className="navHeaderFont">[get photos]</p>
                 </div>
               </Link>
               <div className="navBottomLinks">
@@ -36,11 +37,6 @@ class App extends Component {
                 <Link className="hoverable" to="/favorites">
                   <div>
                     <p>[ Favorites ]</p>
-                  </div>
-                </Link>
-                <Link className="hoverable" to="/sign-in">
-                  <div>
-                    <p>[ Sign-In ]</p>
                   </div>
                 </Link>
                 <Link className="hoverable" to="/about">

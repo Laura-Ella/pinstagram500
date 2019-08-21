@@ -42,7 +42,7 @@ export default class AddPhoto extends Component {
               className="extend"
               type="text"
               name="url"
-              name={this.state.url}
+              // name={this.state.url}
               onChange={this.handleChange}
             />
           </div>
