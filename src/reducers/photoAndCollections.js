@@ -9,6 +9,8 @@ import {
 import axios from "axios";
 
 const searchUrl = "https://pinstagram500-api.herokuapp.com/";
+const searchUrlCollection =
+  "https://pinstagram500-api.herokuapp.com/collection";
 
 let photos = [];
 let collections = [];
@@ -18,12 +20,12 @@ var DEFAULT_STATE = {
   collections
 };
 
-async function getData() {
+async function getDataPhotos() {
   try {
     let res = await axios({
       url: searchUrl,
       method: "get",
-      timeout: 1000,
+      timeout: 100,
       headers: {
         "Content-Type": "application/json"
       }
@@ -37,7 +39,7 @@ async function getData() {
   }
 }
 
-getData().then(res => {
+getDataPhotos().then(res => {
   let photos2 = res.map(list => {
     let x = {
       username: list.username,
@@ -53,7 +55,42 @@ getData().then(res => {
     photos.push(photos2[i]);
   }
 });
-console.log(photos);
+
+async function getDataCollections() {
+  try {
+    let res = await axios({
+      url: searchUrlCollection,
+      method: "get",
+      timeout: 100,
+      headers: {
+        "Content-Type": "application/json"
+      }
+    });
+    if (res.status === 200) {
+      console.log(res.status);
+    }
+    return res.data;
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+getDataCollections().then(res => {
+  let collections2 = res.map(list => {
+    let x = {
+      title: list.title,
+      tags: list.tags,
+      height: list.height,
+      photos: list.preview_photos
+    };
+    return x;
+  });
+  console.log(collections2);
+  for (let i = 0; i < collections2.length; i++) {
+    collections.push(collections2[i]);
+  }
+  console.log(collections);
+});
 
 // var photos = [
 //   {

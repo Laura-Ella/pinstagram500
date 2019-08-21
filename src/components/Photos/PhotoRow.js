@@ -12,6 +12,10 @@ const PhotoRow = ({
   //   team = "",
   // image = "",
   // tag = "",
+
+  // componentDidMount = () => {
+  //   this.props.dispatch(getPhotos);
+  // },
   onChange = () => {},
   onClick = () => {
     if (this.refs.imageType) {
