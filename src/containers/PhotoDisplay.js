@@ -13,7 +13,7 @@ const Photos = ({ photos, onRemove, onUpdate }) => {
           {...d}
           onClick={e => {
             e.preventDefault();
-            onUpdate(i);
+            onRemove(i);
           }}
           onChange={e => {
             e.preventDefault();
@@ -30,7 +30,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  // onRemove: id => dispatch(deletePhoto(id)),
+  onRemove: id => dispatch(deletePhoto(id)),
   onUpdate: (id, update) => dispatch(updatePhoto(id, update))
 });
 

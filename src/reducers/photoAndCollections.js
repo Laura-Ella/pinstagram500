@@ -2,7 +2,6 @@ import {
   CREATE_PHOTO,
   UPDATE_PHOTO,
   DELETE_PHOTO,
-  CREATE_COLLECTION,
   UPDATE_COLLECTION,
   DELETE_COLLECTION,
   UPDATE_FAVORITE,
@@ -134,6 +133,13 @@ export default function photoAndCollectionsReducer(
         }),
         favorites: [...state.favorites, action.payload.updatedPhoto]
       };
+    case DELETE_PHOTO:
+      return {
+        ...state,
+        photos: state.photos.filter((photo, id) => {
+          return id !== action.payload;
+        })
+      };
     case UPDATE_COLLECTION:
       return {
         ...state,
@@ -148,7 +154,13 @@ export default function photoAndCollectionsReducer(
         }),
         favorites: [...state.favorites, action.payload.updatedCollection]
       };
-
+    case DELETE_COLLECTION:
+      return {
+        ...state,
+        collections: state.collections.filter((collection, id) => {
+          return id !== action.payload;
+        })
+      };
     case UPDATE_FAVORITE:
       return {
         ...state,

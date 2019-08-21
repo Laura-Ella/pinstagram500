@@ -9,8 +9,8 @@ const PhotoRow = ({
   url = "",
   tag = "",
 
-  onChange = () => {}
-  // onClick = () => {}
+  onChange = () => {},
+  onClick = () => {}
 }) => (
   <div>
     <div className="contain">
@@ -63,9 +63,9 @@ const PhotoRow = ({
         <option value={url}>Add to Favorites</option>
       </select>
 
-      {/* <button className="delete" onClick={onClick}>
-        Add to Favorites
-      </button> */}
+      <button className="delete" onClick={onClick}>
+        X
+      </button>
     </div>
   </div>
 );
