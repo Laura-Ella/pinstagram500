@@ -1,11 +1,17 @@
 import React from "react";
 import "./PhotoRow.css";
 const PhotoRow = ({
+  username = "",
+  width = "",
+  height = "",
+  description = "",
+  url = "",
+  tag = "",
   //   name = "",
   //   birthplace = "",
   //   team = "",
-  image = "",
-  tag = "",
+  // image = "",
+  // tag = "",
   onChange = () => {},
   onClick = () => {
     if (this.refs.imageType) {
@@ -18,7 +24,7 @@ const PhotoRow = ({
       <div
         className="photo"
         style={{
-          backgroundImage: `url(${image})`,
+          backgroundImage: `url(${url})`,
           backgroundPosition: "center",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
@@ -66,15 +72,15 @@ const PhotoRow = ({
       <select
         className="teamChanger"
         onChange={onChange}
-        name="image"
-        value={image}
+        name="url"
+        value={url}
         value2={tag}
       >
-        <option value={image} />
-        <option value={image} value2="Earth">
+        <option value={url} />
+        <option value={url} value2="Earth">
           #Earth
         </option>
-        <option value={image}>#Computer</option>
+        <option value={url}>#Computer</option>
       </select>
 
       <button className="delete" onClick={onClick}>
