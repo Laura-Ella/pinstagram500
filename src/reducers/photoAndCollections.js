@@ -104,7 +104,7 @@ getDataCollections().then(res => {
     collections.push({
       title: databaseCollectionsTitle[i],
       tags: databaseCollectionsTags[i],
-      urls: databaseCollectionsUrls[i]
+      url: databaseCollectionsUrls[i]
     });
   }
   console.log(collections);
@@ -146,7 +146,7 @@ export default function photoAndCollectionsReducer(
             ...action.payload.updatedCollection
           };
         }),
-        favorites: [...state.favorites, action.payload.updatedPhoto]
+        favorites: [...state.favorites, action.payload.updatedCollection]
       };
 
     case UPDATE_FAVORITE:

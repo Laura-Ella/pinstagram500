@@ -4,7 +4,7 @@ import "./CollectionRow.css";
 const CollectionRow = ({
   title = "",
   tags = " ",
-  urls = "",
+  url = "",
   onChange = () => {},
   onClick = () => {}
 }) => (
@@ -19,29 +19,29 @@ const CollectionRow = ({
       <div
         className="photo"
         style={{
-          backgroundImage: `url(${urls})`
+          backgroundImage: `url(${url})`
         }}
       />
       {/* <div
         className="photo"
         style={{
-          backgroundImage: `url(${urls[1]})`
+          backgroundImage: `url(${url[1]})`
         }}
       />
       <div
         className="photo"
         style={{
-          backgroundImage: `url(${urls[2]})`
+          backgroundImage: `url(${url[2]})`
         }}
       /> */}
       <select
         className="teamChanger"
         onChange={onChange}
-        name="urls"
-        value={urls}
+        name="url"
+        value={url}
       >
-        <option value={urls} />
-        <option value={urls}>Add to Favorites</option>
+        <option value={url} />
+        <option value={url}>Add to Favorites</option>
       </select>
       {/* <button className="delete" onClick={onClick}>
         Add to Favorites
