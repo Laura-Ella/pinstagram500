@@ -4,7 +4,7 @@ import "./CollectionRow.css";
 const CollectionRow = ({
   title = "",
   tag = "",
-  image = "",
+  urls = "",
   onChange = () => {},
   onClick = () => {}
 }) => (
@@ -17,7 +17,7 @@ const CollectionRow = ({
       <div
         className="photo"
         style={{
-          backgroundImage: `url(${image})`,
+          backgroundImage: `url(${urls})`,
           backgroundPosition: "center",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
