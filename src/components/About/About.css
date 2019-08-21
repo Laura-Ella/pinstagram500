@@ -36,7 +36,7 @@ h4 {
     width: 100%;
     height: 100%;
     padding-top: 50px;
-    padding-bottom: 200px
+    padding-bottom: 175px
 }
 
 .aboutUs {
@@ -63,11 +63,12 @@ a {
 }
 
 .meetcontainer {
-    display: flex;
+    padding: 50px;
+    
 }
 
 .meet {
-    background: url("beak.png");
+    background: url("logo.png");
     background-position: center;
     border-radius: 3px;
 
@@ -94,12 +95,28 @@ input {
     width: 500px;
     border-radius: 3px;
     margin-left: 3px;
-    margin-top: 10px
+    margin-top: 70px
+}
+
+/* .footerleft {
+    float: left
+} */
+
+.footerright {
+    padding: 15px;
+    margin-left: 30px
+} 
+
+li {
+    text-decoration: none
 }
 
 .footercontainer {
-    background-color: bisque;
-    padding: 50px
+    background-color: black;
+    color: white;
+    padding: 50px;
+    display: flex;
+    justify-content: center
 }
 
 h3 {
@@ -109,8 +126,9 @@ h3 {
 
 .bio {
     background-color: white;
-    padding: 15px;
-    font-size: 13px
+    padding: 8px;
+    font-size: 13px;
+    margin-right: 20px
 }
 
 .founders {
@@ -136,11 +154,6 @@ button {
     font-size: 20px
 }
 
-.footer {
-    /* background-color: rgba(247, 180, 65, 0.858) */
-    background-color: black;
-    color: white
-}
 
 /* {
     box-sizing: border-box;

@@ -23,19 +23,19 @@ class About extends Component {
               <img src=""></img>
             </div>
             <div className="bio">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
             <div className="meet">
               <img src=""></img>
             </div>
             <div className="bio">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
             <div className="meet">
               <img src=""></img>
             </div>
             <div className="bio">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
           </div>
         </div>
@@ -84,15 +84,19 @@ class About extends Component {
         </div>
 
         <div className="footercontainer">
-        <div>
-          <h4>This is a test</h4>
-          <ul>
-            <li>Home</li>
-            <li>Contact Us</li>
-            <li>Careers</li>
-            <li>Privacy Policy</li>
-          </ul>
-        </div>
+          <div className="footerleft">
+            <h3>Contact Info</h3>
+            <p>Address: 509 7th St NW, Washington, DC </p>
+            <p>Phone Number: 202-322-9847</p>
+          </div>
+          <div className="footerright">
+            <ul>
+              <li>Home</li>
+              <li>Contact Us</li>
+              <li>Careers</li>
+              <li>Privacy Policy</li>
+            </ul>
+          </div>
         </div>
       </div>
     );
