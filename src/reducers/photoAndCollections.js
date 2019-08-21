@@ -76,7 +76,11 @@ getDataCollections().then(res => {
     };
     return x;
   });
-  // console.log(databaseCollections[0].urls[0].urls.raw);
+
+  let databaseCollectionsTitle = databaseCollections.map(list => {
+    return list.title;
+  });
+
   let databaseCollectionsUrls = databaseCollections.map(list => {
     let databaseRaw = list.urls.map(elements => {
       return elements.urls.raw;
@@ -90,14 +94,10 @@ getDataCollections().then(res => {
     });
     return databaseTags;
   });
-  console.log(databaseCollectionsTags);
-  // for (let i = 0; i < databaseCollections.length; i++) {
-  //   collections.push(databaseCollections[i]);
-  // }
-  // console.log(collections);
 
-  for (let i = 0; i < databaseCollectionsUrls.length; i++) {
+  for (let i = 0; i < databaseCollections.length; i++) {
     collections.push({
+      title: databaseCollectionsTitle[i],
       tags: databaseCollectionsTags[i],
       urls: databaseCollectionsUrls[i]
     });
