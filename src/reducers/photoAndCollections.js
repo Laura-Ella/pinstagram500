@@ -14,10 +14,12 @@ const searchUrlCollection =
 
 let photos = [];
 let collections = [];
+let favorites = [];
 
 var DEFAULT_STATE = {
   photos,
-  collections
+  collections,
+  favorites
 };
 
 async function getDataPhotos() {

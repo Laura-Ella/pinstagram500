@@ -4,7 +4,10 @@ import {
   DELETE_PHOTO,
   CREATE_COLLECTION,
   UPDATE_COLLECTION,
-  DELETE_COLLECTION
+  DELETE_COLLECTION,
+  CREATE_FAVORITE,
+  UPDATE_FAVORITE,
+  DELETE_FAVORITE
 } from "../constants/photosAndCollections";
 
 export function createNewPhoto(image, tag) {
@@ -51,5 +54,32 @@ export const updateCollection = (id, updatedCollection) => ({
   payload: {
     id,
     updatedCollection
+  }
+});
+
+export function createNewFavorite(image, tag) {
+  return {
+    type: CREATE_FAVORITE,
+    payload: {
+      // name,
+      // birthplace,
+      // team,
+      // rank,
+      image,
+      tag
+    }
+  };
+}
+
+export const deleteFavorite = id => ({
+  type: DELETE_FAVORITE,
+  payload: id
+});
+
+export const updateFavorite = (id, updatedFavorite) => ({
+  type: UPDATE_FAVORITE,
+  payload: {
+    id,
+    updatedFavorite
   }
 });

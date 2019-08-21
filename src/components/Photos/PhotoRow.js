@@ -23,14 +23,14 @@ const PhotoRow = ({
           backgroundWidth: width,
           backgroundRepeat: "no-repeat",
           position: "relative",
-          textAlign: "center",
-          border: "2px solid black"
+          border: "2px solid black",
+          textAlign: "left"
         }}
       >
         <div className="textContainer">
           <div className="text">
             <p>
-              <span className="tagDisplay">Username: </span>
+              <span className="tagDisplay">User: </span>
               {username}
             </p>
             <p>
