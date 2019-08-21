@@ -4,7 +4,9 @@ import {
   DELETE_PHOTO,
   CREATE_COLLECTION,
   UPDATE_COLLECTION,
-  DELETE_COLLECTION
+  DELETE_COLLECTION,
+  UPDATE_FAVORITE,
+  DELETE_FAVORITE
 } from "../constants/photosAndCollections";
 import axios from "axios";
 
@@ -131,7 +133,8 @@ export default function photoAndCollectionsReducer(
           };
         }),
 
-        collections: [...state.collections, action.payload.updatedPhoto]
+        // collections: [...state.collections, action.payload.updatedPhoto],
+        favorites: [...state.favorites, action.payload.updatedPhoto]
       };
     case DELETE_PHOTO:
       return {
@@ -162,6 +165,26 @@ export default function photoAndCollectionsReducer(
       return {
         ...state,
         collections: state.collections.filter((collection, id) => {
+          return id !== action.payload;
+        })
+      };
+    case UPDATE_FAVORITE:
+      return {
+        ...state,
+        favorites: state.favorites.map((favorite, index) => {
+          if (index !== action.payload.id) {
+            return favorite;
+          }
+          return {
+            ...favorite,
+            ...action.payload.updatedfavorite
+          };
+        })
+      };
+    case DELETE_FAVORITE:
+      return {
+        ...state,
+        favorites: state.favorites.filter((favorite, id) => {
           return id !== action.payload;
         })
       };
