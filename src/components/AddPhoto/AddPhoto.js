@@ -30,7 +30,6 @@ export default class AddPhoto extends Component {
     // let image = evt.target[4].value;
 
     this.props.dispatch(createNewPhoto(image));
-    this.props.dispatch(createNewCollection(image));
 
     evt.target[0].value = "";
     // evt.target[1].value = "";

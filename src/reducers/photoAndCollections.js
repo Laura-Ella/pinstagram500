@@ -115,6 +115,11 @@ export default function photoAndCollectionsReducer(
   action
 ) {
   switch (action.type) {
+    case CREATE_PHOTO:
+      return {
+        ...state,
+        photos: [...state.photos, action.payload]
+      };
     case UPDATE_PHOTO:
       return {
         ...state,
@@ -143,6 +148,7 @@ export default function photoAndCollectionsReducer(
         }),
         favorites: [...state.favorites, action.payload.updatedPhoto]
       };
+
     case UPDATE_FAVORITE:
       return {
         ...state,
