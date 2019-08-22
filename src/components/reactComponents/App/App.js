@@ -5,7 +5,7 @@ import Photos from "../Photos/Photos";
 import Collections from "../Collections/Collections";
 import Favorites from "../Favorites/Favorites";
 import AddNewPhoto from "../Add/Add";
-import About from "../About/About";
+import About from "../../About/About";
 import "./App.css";
 
 const searchUrl = "https://pinstagram500-api.herokuapp.com";
