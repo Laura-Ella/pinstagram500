@@ -21,7 +21,7 @@ class Collections extends Component {
         function() {
           this.setState({ checked: false });
         }.bind(this),
-        1000
+        400
       );
     }
   };
