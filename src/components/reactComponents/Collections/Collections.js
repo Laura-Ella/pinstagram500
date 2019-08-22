@@ -21,7 +21,7 @@ class Collections extends Component {
         function() {
           this.setState({ checked: false });
         }.bind(this),
-        400
+        500
       );
     }
   };
@@ -121,7 +121,7 @@ class Collections extends Component {
               </div>
             </div>
             <button
-              className="delete"
+              className="deleteButton"
               onClick={() => this.deleteCollection(collection._id)}
             >
               Delete Collection

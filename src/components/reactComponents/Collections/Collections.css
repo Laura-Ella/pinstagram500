@@ -14,15 +14,10 @@ a {
   margin-top: 5%;
   display: grid;
   grid-template-columns: 400px 400px;
-  /* grid-template-rows: 60% 60% 60% 60%; */
   height: 50vh;
   width: 60vw;
   justify-content: space-between;
 }
-/* .collectionGrid {
-  display: flex;
-  justify-content: center;
-} */
 .textContainerCollections {
   transition: 0.4s ease;
   opacity: 0;
@@ -66,7 +61,7 @@ a {
   background: white;
   font-size: 20px;
 }
-.delete {
+.deleteButton {
   background: lightcoral;
   color: black;
   border: 1px solid black;

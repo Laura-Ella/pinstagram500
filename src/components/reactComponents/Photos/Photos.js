@@ -96,7 +96,7 @@ class Photos extends Component {
                   <span className="descriptionTitle">Description: </span>
                   {photo.description}
                 </p>
-                <p>
+                <p className="descriptionValue">
                   <span className="description">Likes: </span>
                   {photo.likes}
                 </p>
