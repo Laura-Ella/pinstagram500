@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import "./Photos.css";
 import axios from "axios";
 import HeartCheckbox from "react-heart-checkbox";
@@ -32,25 +31,19 @@ class Photos extends Component {
       .catch(err => {
         console.error(err);
       });
-    window.location.reload();
+    this.props.getMorePhotos();
   }
   heartClick = (event, props) => {
     this.setState({ checked: !this.state.checked });
+    if (this.state.checked == false) {
+      setTimeout(
+        function() {
+          this.setState({ checked: false });
+        }.bind(this),
+        400
+      );
+    }
   };
-
-  // deletePhoto(id) {
-  //   axios
-  //     .delete(`https://pinstagram500-api.herokuapp.com/${id}`)
-  //     .then(() => {
-  //       return axios.get(`https://pinstagram500-api.herokuapp.com/`);
-  //     })
-  //     .then(res => {
-  //       const photos = res.data;
-  //       this.setState({ photos });
-  //     });
-  //   window.location.reload();
-  // }
-
   incrementLikes(id) {
     axios
       .put(`https://pinstagram500-api.herokuapp.com/photo/${id}`)
@@ -60,7 +53,7 @@ class Photos extends Component {
       .catch(err => {
         console.error(err);
       });
-    window.location.reload();
+    this.props.getMorePhotos();
   }
   deletePhoto(id) {
     axios
@@ -70,7 +63,7 @@ class Photos extends Component {
         console.log(res);
         this.setState({ photos: res.data });
       });
-    window.location.reload();
+    this.props.getMorePhotos();
   }
 
   render() {
@@ -111,10 +104,12 @@ class Photos extends Component {
                 <div>
                   <HeartCheckbox
                     className="heart"
-                    style={{
-                      background: `pink`
+                    checked={checked}
+                    onClick={e => {
+                      e.preventDefault();
+                      this.incrementLikes(photo._id, index);
+                      this.heartClick(photo._id, index);
                     }}
-                    onClick={() => this.incrementLikes(photo._id, index)}
                   />
                 </div>
               </div>

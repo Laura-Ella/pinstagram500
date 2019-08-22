@@ -70,8 +70,7 @@ class App extends Component {
     super(props);
     this.state = {
       photos: [],
-      collections2,
-      favorites: []
+      collections2
     };
   }
 
@@ -89,6 +88,21 @@ class App extends Component {
         console.error(err);
       });
   }
+
+  getMorePhotos = () => {
+    axios
+      .get(searchUrl)
+      .then(response => {
+        this.setState({
+          photos: response.data
+        });
+        console.log(this.state.photos);
+      })
+      .catch(err => {
+        console.error(err);
+      });
+  };
+
   render() {
     return (
       <div>
@@ -110,11 +124,6 @@ class App extends Component {
                   <p>[ Upload ]</p>
                 </div>
               </Link>
-              {/* <Link className="hoverable" to="/favorite">
-                <div>
-                  <p>[ Favorites ]</p>
-                </div>
-              </Link> */}
               <Link className="hoverable" to="/about">
                 <div>
                   <p>[ About ]</p>
@@ -129,7 +138,7 @@ class App extends Component {
             exact
             render={routerProps => (
               <Photos
-                deletePhoto={this.deletePhoto}
+                getMorePhotos={this.getMorePhotos}
                 photoData={this.state.photos}
                 {...routerProps}
               />
@@ -154,7 +163,16 @@ class App extends Component {
             )}
           />
 
-          <Route path="/upload" exact component={AddNewPhoto} />
+          <Route
+            path="/upload"
+            exact
+            render={routerProps => (
+              <AddNewPhoto
+                getMorePhotos={this.getMorePhotos}
+                {...routerProps}
+              />
+            )}
+          />
 
           <Route path="/about" exact component={About} />
           {/* <div className="appCenter">
