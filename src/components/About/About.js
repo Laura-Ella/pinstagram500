@@ -15,6 +15,9 @@ class About extends Component {
               {/* <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p> */}
               <h1>The Spirit of Photo</h1>
               <h2>Discovering the world one photo at a time.</h2>
+              <div className="signup">
+                <button>Sign Up!</button>
+              </div>
             </div>
           </div>
         </div>
@@ -34,28 +37,28 @@ class About extends Component {
               <img src=""></img>
             </div>
             <div className="bio">
-            <p>Austin's Bio</p>
-            <p>Software Engineer out of Arlington, VA.</p>
-            <p><a href="https://www.linkedin.com/in/austin-regan/" className="linkedin">LinkedIn</a></p>
-            <p><a href="https://www.linkedin.com/in/laura-ella-robinson/" className="linkedin">Github</a></p>
+              <p>Austin's Bio</p>
+              <p>Software Engineer out of Arlington, VA.</p>
+              <p><a href="https://www.linkedin.com/in/austin-regan/" className="linkedin">LinkedIn</a></p>
+              <p><a href="https://www.linkedin.com/in/laura-ella-robinson/" className="linkedin">Github</a></p>
             </div>
             <div className="laura">
               <img src=""></img>
             </div>
             <div className="bio">
-            <p>Laura's Bio</p>
-            <p>Software Engineer || Chemist</p>
-            <p><a href="https://www.linkedin.com/in/laura-ella-robinson/" className="linkedin">LinkedIn</a></p>
-            <p><a href="https://git.generalassemb.ly/Laura-Ella" className="linkedin">Github</a></p>
+              <p>Laura's Bio</p>
+              <p>Software Engineer || Chemist</p>
+              <p><a href="https://www.linkedin.com/in/laura-ella-robinson/" className="linkedin">LinkedIn</a></p>
+              <p><a href="https://git.generalassemb.ly/Laura-Ella" className="linkedin">Github</a></p>
             </div>
           </div>
         </div>
 
         <div>
           <div className="message">
-            <div className="signup">
+            {/* <div className="signup">
               <button>Sign Up!</button>
-            </div>
+            </div> */}
             <div className="contact">
               <h4>Send us a message!</h4>
               <p>Your message will be posted in one of our Slack channels.</p>
@@ -101,11 +104,11 @@ class About extends Component {
             <p>Phone Number: 202-322-9847</p>
           </div>
           <div className="footerright">
-              <a href="#">Home</a>
-              <a href="mailto:us@pinstagram500.com">Say Hello</a>
-              <a href="#">Careers</a>
-              <a href="#">Privacy Policy</a>
-              <a href="#">Terms of Use</a>
+            <a href="#">Home</a>
+            <a href="mailto:us@pinstagram500.com">Say Hello</a>
+            <a href="#">Careers</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Use</a>
           </div>
         </div>
       </div>
