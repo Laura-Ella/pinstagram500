@@ -38,18 +38,18 @@ class Photos extends Component {
     this.setState({ checked: !this.state.checked });
   };
 
-  deletePhoto(id) {
-    axios
-      .delete(`https://pinstagram500-api.herokuapp.com/${id}`)
-      .then(() => {
-        return axios.get(`https://pinstagram500-api.herokuapp.com/`);
-      })
-      .then(res => {
-        const photos = res.data;
-        this.setState({ photos });
-      });
-    window.location.reload();
-  }
+  // deletePhoto(id) {
+  //   axios
+  //     .delete(`https://pinstagram500-api.herokuapp.com/${id}`)
+  //     .then(() => {
+  //       return axios.get(`https://pinstagram500-api.herokuapp.com/`);
+  //     })
+  //     .then(res => {
+  //       const photos = res.data;
+  //       this.setState({ photos });
+  //     });
+  //   window.location.reload();
+  // }
 
   incrementLikes(id) {
     axios
@@ -59,6 +59,16 @@ class Photos extends Component {
       })
       .catch(err => {
         console.error(err);
+      });
+    window.location.reload();
+  }
+  deletePhoto(id) {
+    axios
+      .delete(`https://pinstagram500-api.herokuapp.com/${id}`)
+
+      .then(res => {
+        console.log(res);
+        this.setState({ photos: res.data });
       });
     window.location.reload();
   }
@@ -98,19 +108,15 @@ class Photos extends Component {
                   {photo.likes}
                 </p>
                 <br />
-                <div
-                  className="clicker"
-                  onClick={() => this.incrementLikes(photo._id, index)}
-                >
-                  LIKE
-                </div>
-                {/* <div>
+                <div>
                   <HeartCheckbox
                     className="heart"
-                    checked={checked}
-                    onClick={() => this.heartClick(photo._id, index)}
+                    style={{
+                      background: `pink`
+                    }}
+                    onClick={() => this.incrementLikes(photo._id, index)}
                   />
-                </div> */}
+                </div>
               </div>
             </div>
           </div>

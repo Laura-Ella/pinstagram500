@@ -89,7 +89,6 @@ class App extends Component {
         console.error(err);
       });
   }
-
   render() {
     return (
       <div>
@@ -129,7 +128,11 @@ class App extends Component {
             path="/"
             exact
             render={routerProps => (
-              <Photos photoData={this.state.photos} {...routerProps} />
+              <Photos
+                deletePhoto={this.deletePhoto}
+                photoData={this.state.photos}
+                {...routerProps}
+              />
             )}
           />
           <Route
@@ -147,11 +150,7 @@ class App extends Component {
             path="/favorite"
             exact
             render={routerProps => (
-              <Favorites
-                deletePhoto={this.deletePhoto}
-                favoriteData={this.state.favorites}
-                {...routerProps}
-              />
+              <Favorites favoriteData={this.state.favorites} {...routerProps} />
             )}
           />
 
