@@ -1,4 +1,4 @@
-.driverGrid2,
+.formGrid,
 .form {
   border: 1px solid black;
   text-align: center;
@@ -8,13 +8,23 @@
   padding: 20px;
 }
 
-.forminput {
+.formInput {
   display: flex;
   justify-content: center;
-  background-color: whitesmoke;
 }
 
 .submit {
   margin: 3px;
   border-radius: 2px;
+}
+.formTitle {
+  font-size: 28px;
+  font-weight: bolder;
+}
+.inputField {
+  margin: 10% 0;
+  font-size: 20px;
+}
+.extend {
+  width: 80%;
 }

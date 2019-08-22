@@ -34,46 +34,42 @@ class AddNewPhoto extends Component {
   }
   render() {
     return (
-      <div className="forminput">
-        <div className="driverGrid2">
-          <div className="driverTitle">Add a Photo</div>
-          <div className="name">
+      <div className="formInput">
+        <div className="formGrid">
+          <div className="formTitle">Add a Photo</div>
+          <div className="inputField">
             <p>Image</p>
             <input
               className="extend"
               type="text"
               name="url"
-              // name={this.state.url}
               onChange={this.handleChange}
             />
           </div>
-          <div className="user">
+          <div className="inputField">
             <p>User</p>
             <input
               className="extend"
               type="text"
               name="username"
-              // name={this.state.url}
               onChange={this.handleChange}
             />
           </div>
-          <div className="description">
+          <div className="inputField">
             <p>Description</p>
             <input
               className="extend"
               type="text"
               name="description"
-              // name={this.state.url}
               onChange={this.handleChange}
             />
           </div>
-          <div className="tag">
+          <div className="inputField">
             <p>Tag</p>
             <input
               className="extend"
               type="text"
               name="tag"
-              // name={this.state.url}
               onChange={this.handleChange}
             />
           </div>
