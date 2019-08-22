@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import "./Photos.css";
 import axios from "axios";
 import HeartCheckbox from "react-heart-checkbox";
-import equal from "fast-deep-equal";
 
 class Photos extends Component {
   constructor(props) {
@@ -16,20 +15,6 @@ class Photos extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-
-  deletePhoto(id) {
-    axios
-      .delete(`https://pinstagram500-api.herokuapp.com/${id}`)
-      .then(() => {
-        return axios.get(`https://pinstagram500-api.herokuapp.com/`);
-      })
-      .then(res => {
-        const photos = res.data;
-        this.setState({ photos });
-      });
-    window.location.reload();
-  }
-
   handleChange(evt) {
     evt.preventDefault();
     this.setState({ [evt.target.name]: evt.target.value });
@@ -53,13 +38,22 @@ class Photos extends Component {
     this.setState({ checked: !this.state.checked });
   };
 
-  incrementLikes = id => {
-    console.log(this.props.photoData);
+  deletePhoto(id) {
     axios
-      .put(
-        `https://pinstagram500-api.herokuapp.com/${id}`,
-        this.props.likes + 1
-      )
+      .delete(`https://pinstagram500-api.herokuapp.com/${id}`)
+      .then(() => {
+        return axios.get(`https://pinstagram500-api.herokuapp.com/`);
+      })
+      .then(res => {
+        const photos = res.data;
+        this.setState({ photos });
+      });
+    window.location.reload();
+  }
+
+  incrementLikes = id => {
+    axios
+      .put(`https://pinstagram500-api.herokuapp.com/photo/${id}`)
       .then(response => {
         console.log(response);
       })
@@ -75,7 +69,6 @@ class Photos extends Component {
         <div key={photo._id} className="cardContainer">
           <div
             className="photoDivs"
-            key={photo._id}
             style={{
               backgroundImage: `url(${photo.url})`,
               backgroundPosition: "center",

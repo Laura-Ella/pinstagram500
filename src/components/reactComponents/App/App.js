@@ -129,13 +129,7 @@ class App extends Component {
             path="/"
             exact
             render={routerProps => (
-              <Photos
-                deletePhoto={this.deletePhoto}
-                addFavorite={this.addFavorite}
-                updateFavoriteSetting={this.updateFavoriteSetting}
-                photoData={this.state.photos}
-                {...routerProps}
-              />
+              <Photos photoData={this.state.photos} {...routerProps} />
             )}
           />
           <Route
