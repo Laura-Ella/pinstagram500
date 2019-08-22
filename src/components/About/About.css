@@ -1,0 +1,338 @@
+/* h1 {
+    text-decoration: underline;
+    margin: auto
+} */
+
+a {
+    color: white;
+    text-decoration: none
+}
+
+.linkedin {
+    color: black;
+    text-decoration: underline
+}
+
+a:hover {
+    color: red
+}
+
+h4 {
+    margin: auto
+}
+
+.welcome {
+    text-align: center
+}
+
+.signup {
+    display: flex;
+    align-items: center
+}
+
+.ipsumcontainer {
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+}
+.message {
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    padding: 75px
+}
+
+.address {
+    text-decoration: underline
+}
+
+.backgroundimage {
+    background: url("plants.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 100%;
+    height: 100%;
+    padding-top: 50px;
+    padding-bottom: 175px
+}
+
+.aboutUs {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-decoration: underline;
+    padding: 18px;
+    line-height: 25px;
+    width: 500px;
+    border-radius: 3px;
+    text-align: center
+}
+
+img {
+    padding: 100px;
+}
+
+a {
+    margin: 10px;
+}
+
+.meetcontainer {
+    padding: 50px;
+}
+
+.austin {
+    background: url("austin2.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    border-radius: 3px;
+}
+
+.dee {
+    background: url("dee.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    border-radius: 3px;
+}
+
+.laura {
+    background: url("laura.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    border-radius: 3px;
+}
+
+input {
+    padding: 15px;
+    background-color: whitesmoke;
+    margin-right: 5px;
+    border: none;
+    border-bottom: 2px solid red;
+    font-size: 13px
+}
+
+.contact {
+    text-align: center;
+    margin: 10px
+}
+
+.story {
+    background-color: rgba(255, 255, 255, 0.0);
+    /* text-decoration: underline; */
+    padding: 18px;
+    line-height: 25px;
+    width: 500px;
+    border-radius: 3px;
+    margin-left: 3px;
+    margin-top: 70px;
+    font-size: 20px;
+    /* color: black;
+    text-shadow:
+    -1px -1px 0 white,
+    1px -1px 0 white,
+    -1px 1px 0 white,
+    1px 1px 0 white; */
+    font-style: italic;
+    color: whitesmoke;
+    font-weight: lighter;
+}
+
+.footerright {
+    padding: 15px;
+    margin-left: 30px;
+    display: grid;
+    line-height: 2px
+} 
+
+li {
+    text-decoration: none
+}
+
+.footercontainer {
+    background-color: black;
+    color: white;
+    padding: 100px;
+    display: flex;
+    justify-content: center
+}
+
+h3 {
+    text-decoration: underline;
+    text-align: center
+}
+
+.bio {
+    background-color: white;
+    padding: 8px;
+    font-size: 13px;
+    margin-right: 20px;
+    border-radius: 3px;
+    width: 300px
+}
+
+.meetfounders {
+    text-align: center
+}
+
+.founders {
+    display: flex;
+    justify-content: center;
+    align-content: space-between;
+    padding: 15px;
+    /* float: none */
+}
+
+.divide {
+    background-color: rgba(52, 52, 55);
+    display: flex;
+    align-content: right;
+    align-items: right
+}
+
+button {
+    background-color: red;
+    border-radius: 5px;
+    border-color: red;
+    color: white;
+    padding: 15px;
+    font-size: 20px
+}
+
+
+/* {
+    box-sizing: border-box;
+  } */
+  
+  /* Set a background color */
+  body {
+    background-color: #474e5d;
+    font-family: Helvetica, sans-serif;
+  }
+  
+  /* The actual timeline (the vertical ruler) */
+  .timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* The actual timeline (the vertical ruler) */
+  .timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: white;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+  }
+  
+  /* Container around content */
+  .container {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+  }
+  
+  /* The circles on the timeline */
+  .container::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -17px;
+    background-color: white;
+    border: 4px solid #FF9F55;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+  }
+  
+  /* Place the container to the left */
+  .left {
+    left: 0;
+  }
+  
+  /* Place the container to the right */
+  .right {
+    left: 50%;
+  }
+  
+  /* Add arrows to the left container (pointing right) */
+  .left::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    right: 30px;
+    border: medium solid white;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent white;
+  }
+  
+  /* Add arrows to the right container (pointing left) */
+  .right::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: 30px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+  }
+  
+  /* Fix the circle for containers on the right side */
+  .right::after {
+    left: -16px;
+  }
+  
+  /* The actual content */
+  .content {
+    padding: 20px 30px;
+    background-color: white;
+    position: relative;
+    border-radius: 6px;
+  }
+  
+  /* Media queries - Responsive timeline on screens less than 600px wide */
+  @media screen and (max-width: 600px) {
+  /* Place the timelime to the left */
+    .timeline::after {
+      left: 31px;
+    }
+  
+  /* Full-width containers */
+    .container {
+      width: 100%;
+      padding-left: 70px;
+      padding-right: 25px;
+    }
+  
+  /* Make sure that all arrows are pointing leftwards */
+    .container::before {
+      left: 60px;
+      border: medium solid white;
+      border-width: 10px 10px 10px 0;
+      border-color: transparent white transparent transparent;
+    }
+  
+  /* Make sure all circles are at the same spot */
+    .left::after, .right::after {
+      left: 15px;
+    }
+  
+  /* Make all right containers behave like the left ones */
+    .right {
+      left: 0%;
+    }
+  }
