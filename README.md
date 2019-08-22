@@ -26,7 +26,7 @@ Pinstagram500 is an app which allows users to add photos and tag them based on t
 * Change into depository
 * Create new git branch
 * Install necessary dependencies
- * npm install <dependency name>
+ * npm install dependency name
 
 
 ## Approach taken
