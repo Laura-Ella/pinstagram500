@@ -29,6 +29,8 @@ class AddNewPhoto extends Component {
       .catch(err => {
         console.error(err);
       });
+    this.props.getMorePhotos();
+    this.props.getMorePhotos();
   }
   render() {
     return (

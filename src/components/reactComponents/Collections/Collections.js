@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./Collections.css";
 import HeartCheckbox from "react-heart-checkbox";
+import axios from "axios";
 
 class Collections extends Component {
   constructor(props) {
@@ -15,7 +16,24 @@ class Collections extends Component {
 
   onClick = (event, props) => {
     this.setState({ checked: !this.state.checked });
+    if (this.state.checked == false) {
+      setTimeout(
+        function() {
+          this.setState({ checked: false });
+        }.bind(this),
+        500
+      );
+    }
   };
+  deleteCollection(id) {
+    axios
+      .delete(`https://pinstagram500-api.herokuapp.com/collection/${id}`)
+      .then(res => {
+        console.log(res);
+        this.setState({ collections: res.data });
+      });
+    window.location.reload();
+  }
   render() {
     const { checked } = this.state;
     let collection = this.props.collectionData.map((collection, index) => {
@@ -42,7 +60,7 @@ class Collections extends Component {
                 textAlign: "center"
               }}
             >
-              <div className="textContainer">
+              <div className="textContainerCollections">
                 <div className="text">
                   <div>
                     <HeartCheckbox
@@ -66,7 +84,7 @@ class Collections extends Component {
                 textAlign: "center"
               }}
             >
-              <div className="textContainer">
+              <div className="textContainerCollections">
                 <div className="text">
                   <div>
                     <HeartCheckbox
@@ -90,8 +108,7 @@ class Collections extends Component {
                 textAlign: "center"
               }}
             >
-              {" "}
-              <div className="textContainer">
+              <div className="textContainerCollections">
                 <div className="text">
                   <div>
                     <HeartCheckbox
@@ -103,6 +120,12 @@ class Collections extends Component {
                 </div>
               </div>
             </div>
+            <button
+              className="deleteButton"
+              onClick={() => this.deleteCollection(collection._id)}
+            >
+              Delete Collection
+            </button>
           </div>
         </div>
       );
