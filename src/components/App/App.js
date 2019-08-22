@@ -10,6 +10,8 @@ import CollectionDisplay from "../../containers/CollectionDisplay";
 import "./App.css";
 
 class App extends Component {
+
+
   render() {
     return (
       <div>
