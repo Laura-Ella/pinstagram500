@@ -3,9 +3,8 @@ import { Route, Link } from "react-router-dom";
 import axios from "axios";
 import Photos from "../Photos/Photos";
 import Collections from "../Collections/Collections";
-import Favorites from "../Favorites/Favorites";
 import AddNewPhoto from "../Add/Add";
-import About from "../../About/About";
+import About from "../About/About";
 import "./App.css";
 
 const searchUrl = "https://pinstagram500-api.herokuapp.com";
@@ -153,13 +152,6 @@ class App extends Component {
                 collectionData={this.state.collections2}
                 {...routerProps}
               />
-            )}
-          />
-          <Route
-            path="/favorite"
-            exact
-            render={routerProps => (
-              <Favorites favoriteData={this.state.favorites} {...routerProps} />
             )}
           />
 
