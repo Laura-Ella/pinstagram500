@@ -32,7 +32,7 @@ class AddNewPhoto extends Component {
   }
   render() {
     return (
-      <div className="form">
+      <div className="forminput">
         <div className="driverGrid2">
           <div className="driverTitle">Add a Photo</div>
           <div className="name">

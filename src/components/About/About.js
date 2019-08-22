@@ -31,7 +31,7 @@ class About extends Component {
               <p>Dee's Bio</p>
               <p>Dee is a writer.</p>
               <p><a href="https://www.linkedin.com/in/dyrolyn-a-46ab2bb7/" className="linkedin">LinkedIn</a></p>
-              <p><a href="https://www.linkedin.com/in/laura-ella-robinson/" className="linkedin">Github</a></p>
+              <p><a href="https://github.com/joeyd2212" className="linkedin">Github</a></p>
             </div>
             <div className="austin">
               <img src=""></img>
@@ -40,7 +40,7 @@ class About extends Component {
               <p>Austin's Bio</p>
               <p>Software Engineer out of Arlington, VA.</p>
               <p><a href="https://www.linkedin.com/in/austin-regan/" className="linkedin">LinkedIn</a></p>
-              <p><a href="https://www.linkedin.com/in/laura-ella-robinson/" className="linkedin">Github</a></p>
+              <p><a href="https://github.com/astnrgn" className="linkedin">Github</a></p>
             </div>
             <div className="laura">
               <img src=""></img>
@@ -49,7 +49,7 @@ class About extends Component {
               <p>Laura's Bio</p>
               <p>Software Engineer || Chemist</p>
               <p><a href="https://www.linkedin.com/in/laura-ella-robinson/" className="linkedin">LinkedIn</a></p>
-              <p><a href="https://git.generalassemb.ly/Laura-Ella" className="linkedin">Github</a></p>
+              <p><a href="https://github.com/Laura-Ella" className="linkedin">Github</a></p>
             </div>
           </div>
         </div>

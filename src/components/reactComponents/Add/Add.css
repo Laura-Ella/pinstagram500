@@ -1,4 +1,19 @@
 .driverGrid2, .form{
-    border: 2px solid red;
-    text-align: center
+    border: 1px solid black;
+    text-align: center;
+    width: 400px;
+    margin: 20px;
+    border-radius: 3px;
+    padding: 20px
+}
+
+.forminput {
+    display: flex;
+    justify-content: center;
+    background-color: whitesmoke
+}
+
+.submit {
+    margin: 3px;
+    border-radius: 2px
 }
