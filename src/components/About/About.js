@@ -86,7 +86,7 @@ class About extends Component {
         <div className="footercontainer">
           <div className="footerleft">
             <h3>Contact Info</h3>
-            <p>Address: 509 7th St NW, Washington, DC </p>
+            <p>Address:<span><a href="https://goo.gl/maps/69APgP5PuAeDamnY9" className="address">509 7th St NW, Washington, DC</a></span></p>
             <p>Phone Number: 202-322-9847</p>
           </div>
           <div className="footerright">
