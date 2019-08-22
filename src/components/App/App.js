@@ -154,7 +154,6 @@ class App extends Component {
               />
             )}
           />
-
           <Route
             path="/upload"
             exact
@@ -165,18 +164,7 @@ class App extends Component {
               />
             )}
           />
-
           <Route path="/about" exact component={About} />
-          {/* <div className="appCenter">
-            <div className="appGrid">
-              <div className="driversCenter">
-                <Route path="/drivers" exact component={RacerDisplay} />
-              </div>
-              <div className="newDrivers">
-                <Route path="/drivers" exact component={NewAddForm} />
-              </div>
-            </div>
-          </div> */}
         </main>
       </div>
     );
