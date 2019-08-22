@@ -7,35 +7,46 @@ class About extends Component {
       <div className="main">
         <div className="backgroundimage">
           <div className="welcome">
-            <h1>Welcome</h1>
+            {/* <h1>Welcome</h1> */}
           </div>
           <div className="ipsumcontainer">
             <div className="story">
-              <h3>Our Story</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              {/* <h3>Our Story</h3> */}
+              {/* <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p> */}
+              <h1>The Spirit of Photo</h1>
+              <h2>Discovering the world one photo at a time.</h2>
             </div>
           </div>
         </div>
         <div className="meetcontainer">
-          <h3>Meet Our Founders!</h3>
+          <h2 className="meetfounders">Meet Our Founders!</h2>
           <div className="founders">
-            <div className="meet">
+            <div className="dee">
               <img src=""></img>
             </div>
             <div className="bio">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <p>Dee's Bio</p>
+              <p>Dee is a writer.</p>
+              <p><a href="https://www.linkedin.com/in/dyrolyn-a-46ab2bb7/" className="linkedin">LinkedIn</a></p>
+              <p><a href="https://www.linkedin.com/in/laura-ella-robinson/" className="linkedin">Github</a></p>
             </div>
-            <div className="meet">
+            <div className="austin">
               <img src=""></img>
             </div>
             <div className="bio">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <p>Austin's Bio</p>
+            <p>Software Engineer out of Arlington, VA.</p>
+            <p><a href="https://www.linkedin.com/in/austin-regan/" className="linkedin">LinkedIn</a></p>
+            <p><a href="https://www.linkedin.com/in/laura-ella-robinson/" className="linkedin">Github</a></p>
             </div>
-            <div className="meet">
+            <div className="laura">
               <img src=""></img>
             </div>
             <div className="bio">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <p>Laura's Bio</p>
+            <p>Software Engineer || Chemist</p>
+            <p><a href="https://www.linkedin.com/in/laura-ella-robinson/" className="linkedin">LinkedIn</a></p>
+            <p><a href="https://git.generalassemb.ly/Laura-Ella" className="linkedin">Github</a></p>
             </div>
           </div>
         </div>
@@ -91,9 +102,10 @@ class About extends Component {
           </div>
           <div className="footerright">
               <a href="#">Home</a>
-              <a href="#">Contact Us</a>
+              <a href="mailto:us@pinstagram500.com">Say Hello</a>
               <a href="#">Careers</a>
               <a href="#">Privacy Policy</a>
+              <a href="#">Terms of Use</a>
           </div>
         </div>
       </div>
