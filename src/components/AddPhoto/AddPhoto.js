@@ -40,7 +40,7 @@ export default class AddPhoto extends Component {
         <div className="driverGrid2">
           <div className="driverTitle">Add a Photo</div>
           <div className="name">
-            <p>Image</p>
+            <p>Images</p>
             <input
               className="extend"
               type="text"
