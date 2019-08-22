@@ -8,13 +8,16 @@ Pinstagram500 is an app which allows users to add photos and tag them based on t
 * React
 * NPM packages
 * Node.js
-* Express
-* MongoDB
-* Mongoose
 * Axios
-* Nodemon
-* Postman
-* Knowledgw on requesting API's
+* Knowledge on requesting API's
+
+## Dependencies
+* axios
+* react
+* react-dom
+* react-router-dom
+* react-router
+* react-script
 
 
 ## Installation instructions
@@ -23,38 +26,39 @@ Pinstagram500 is an app which allows users to add photos and tag them based on t
 * Change into depository
 * Create new git branch
 * Install necessary dependencies
-
+ * npm install <dependency name>
 
 
 ## Approach taken
-* 1. One team member created a git Repository for the BackEnd
+* 1. One team member created a git Repository for the Front-End
 * 2. Installed all the necessary dependencies
-* 2. Other team members cloned the repository
-* ALl team members created seperate branches and worked from that branch
+* 3. Other team members cloned the repository
+* 4. Team members created seperate branches and worked from that branch
   
-* Created index.js files and required all necessary dependencies
-* Created connection file and required necessary dependencies
-* Created Model Schemas (Photos, Collections, Users)
-* Created routes needed to access data
-* Added Create-Read-Update-Delete(CRUD) functionality in          Controllers folder
-* Tested CRUD functionality on the server by using Postman
-* Begin Working on FrontEnd(user Interface) of the applciation
+* Created index.js file and imported all necessary dependencies
+* Imported necessary dependents in the already provided App.js file
+* Created and build up other components (About, AddPhoto, Collections, Photos)
+* Imported dependents where needed
+* Routed and Linked components to one another as needed
+* Implemented CRUD functionality by doing an Axios request to Pinstagram500-api(Back-End)
+* Tested out CRUD functionality
+* Deployed Front-End via Surge
+
 
 
 ## Deployment instructions
 
 Information on deployment can be found at the below link:
-
-* https://git.generalassemb.ly/dc-wdi-node-express/heroku-atlas-deployment
+* https://git.generalassemb.ly/dc-wdi-react-redux/building-a-mern-app
 
 ## Build with
-* Node.js
-* Express
-* MongoDB
+* React
+* NPM dependencies
+
 
 ## Contributing
 
-If you wish to contribute to this project after contributing to the file, please do a pull request and the authors of this project will take a look and provide feedback. Thank you in advance for your desiring to contribute.
+If you wish to contribute to this project after contributing to your cloned version, please do a pull request and the authors of this project will take a look and provide feedback. Thank you in advance for your desiring to contribute.
 
 ## Authors
 
