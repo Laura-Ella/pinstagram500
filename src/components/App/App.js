@@ -5,6 +5,7 @@ import About from "../About/About.js";
 import NewPhotoForm from "../../containers/NewPhotoForm";
 import PhotoDisplay from "../../containers/PhotoDisplay";
 import CollectionDisplay from "../../containers/CollectionDisplay";
+import FavoriteDisplay from "../../containers/FavoriteDisplay";
 
 // import RacerDisplay from "../../containers/RacerDisplay";
 import "./App.css";
@@ -20,7 +21,8 @@ class App extends Component {
             <div>
               <Link to="/">
                 <div className="pinstagramTitleDiv">
-                  <p className="navHeaderFont">Pinstagram500</p>
+                  <p>Pinstagram500</p>
+                  <p className="navHeaderFont">[get photos]</p>
                 </div>
               </Link>
               <div className="navBottomLinks">
@@ -34,9 +36,9 @@ class App extends Component {
                     <p>[ Upload ]</p>
                   </div>
                 </Link>
-                <Link className="hoverable" to="/sign-in">
+                <Link className="hoverable" to="/favorites">
                   <div>
-                    <p>[ Sign-In ]</p>
+                    <p>[ Favorites ]</p>
                   </div>
                 </Link>
                 <Link className="hoverable" to="/about">
@@ -53,6 +55,8 @@ class App extends Component {
           <Route path="/" exact component={PhotoDisplay} />
           {/* {/* <Route path="/collections" exact component={Collections} /> */}
           <Route path="/collections" exact component={CollectionDisplay} />
+          <Route path="/favorites" exact component={FavoriteDisplay} />
+
           <div>
             <Route path="/upload" exact component={NewPhotoForm} />
           </div>

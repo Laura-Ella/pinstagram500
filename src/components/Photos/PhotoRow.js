@@ -1,16 +1,27 @@
 import React from "react";
 import "./PhotoRow.css";
+import { deletePhoto, updatePhoto } from "../../actions/photosAndCollections";
+import axios from "axios";
+
 const PhotoRow = ({
-  //   name = "",
-  //   birthplace = "",
-  //   team = "",
-  image = "",
+  _id = "",
+  description = "",
   tag = "",
+  url = "",
+  username = "",
+
   onChange = () => {},
   onClick = () => {
-    if (this.refs.imageType) {
-      console.log(this.refs.imageType.value);
-    }
+    axios
+      .delete(
+        `${"https://pinstagram500-api.herokuapp.com/5d5db23bfe5c9a001701c3a6"}`
+      )
+      .then(response => {
+        console.log(response);
+      })
+      .catch(err => {
+        console.error(err);
+      });
   }
 }) => (
   <div>
@@ -18,22 +29,36 @@ const PhotoRow = ({
       <div
         className="photo"
         style={{
-          backgroundImage: `url(${image})`,
+          backgroundImage: `url(${url})`,
           backgroundPosition: "center",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
           position: "relative",
-          textAlign: "center",
-          border: "2px solid black"
+          border: "2px solid black",
+          textAlign: "left"
         }}
       >
-        {/* <div className="textContainer">
+        <div className="textContainer">
           <div className="text">
             <p>
-              <span className="description">Name: </span>
-              {name}
+              <span className="tagDisplay">User: </span>
+              {username}
             </p>
             <p>
+              <span className="tagDisplay">ID: </span>
+              {_id}
+            </p>
+
+            <p>
+              <span className="tagDisplay">Description: </span>
+              {description}
+            </p>
+            <p>
+              <span className="tagDisplay">Tag: </span>
+              {tag}
+            </p>
+
+            {/* <p>
               <span className="description">Birthplace: </span>
               {birthplace}
             </p>
@@ -44,37 +69,18 @@ const PhotoRow = ({
             <p>
               <span className="description">Rank: </span>
               {rank}
-            </p>
+            </p> */}
           </div>
-        </div> */}
+        </div>
       </div>
-
-      {/* <select
-        className="teamChanger"
-        onChange={onChange}
-        name2="image"
-        value2={image}
-        name="tag"
-        value={tag}
-      >
-        <option value="" />
-        <option value="Earth" value2={image}>
-          #Earth
-        </option>
-        <option value="Computer">#Computer</option>
-      </select> */}
       <select
         className="teamChanger"
         onChange={onChange}
-        name="image"
-        value={image}
-        value2={tag}
+        name="url"
+        value={url}
       >
-        <option value={image} />
-        <option value={image} value2="Earth">
-          #Earth
-        </option>
-        <option value={image}>#Computer</option>
+        <option value={url} />
+        <option value={url}>Add to Favorites</option>
       </select>
 
       <button className="delete" onClick={onClick}>

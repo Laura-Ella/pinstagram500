@@ -30,7 +30,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  onRemove: id => dispatch(deletePhoto(id)),
+  onRemove: _id => dispatch(deletePhoto(_id)),
   onUpdate: (id, update) => dispatch(updatePhoto(id, update))
 });
 

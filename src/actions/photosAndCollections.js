@@ -4,20 +4,40 @@ import {
   DELETE_PHOTO,
   CREATE_COLLECTION,
   UPDATE_COLLECTION,
-  DELETE_COLLECTION
+  DELETE_COLLECTION,
+  CREATE_FAVORITE,
+  UPDATE_FAVORITE,
+  DELETE_FAVORITE
 } from "../constants/photosAndCollections";
+import axios from "axios";
 
-export function createNewPhoto(image, tag) {
+export function createNewPhoto(url, username, description, height, width, tag) {
   return {
     type: CREATE_PHOTO,
     payload: {
-      image,
+      url,
+      username,
+      description,
+      height,
+      width,
       tag
     }
   };
 }
 
-export const deletePhoto = id => ({ type: DELETE_PHOTO, payload: id });
+export const deletePhoto = _id => {
+  axios
+    .delete(`https://pinstagram500-api.herokuapp.com/${_id}`)
+    .then(() => {
+      return axios.get(`https://pinstagram500-api.herokuapp.com/`);
+    })
+    .then(res => {
+      const photos = res.data;
+      this.setState({ photos });
+    });
+};
+
+// export const deletePhoto = _id => ({ type: DELETE_PHOTO, payload: _id });
 
 export const updatePhoto = (id, updatedPhoto) => ({
   type: UPDATE_PHOTO,
@@ -51,5 +71,28 @@ export const updateCollection = (id, updatedCollection) => ({
   payload: {
     id,
     updatedCollection
+  }
+});
+
+export function createNewFavorite(image, tag) {
+  return {
+    type: CREATE_FAVORITE,
+    payload: {
+      image
+      // tag
+    }
+  };
+}
+
+export const deleteFavorite = id => ({
+  type: DELETE_FAVORITE,
+  payload: id
+});
+
+export const updateFavorite = (id, updatedFavorite) => ({
+  type: UPDATE_FAVORITE,
+  payload: {
+    id,
+    updatedFavorite
   }
 });

@@ -1,16 +1,12 @@
 import React, { Component } from "react";
-import "./AddPhoto.css";
-import { createNewPhoto } from "../../actions/photosAndCollections";
+import { Route, Link } from "react-router-dom";
 import axios from "axios";
+import "./Add.css";
 
-export default class AddPhoto extends Component {
+class AddNewPhoto extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      // name: "",
-      // birthplace: "",
-      // team: "",
-      // rank: 1,
       description: "",
       username: "",
       url: "",
@@ -26,7 +22,7 @@ export default class AddPhoto extends Component {
   }
   handleSubmit() {
     axios
-      .post("https://pinstagram500-api.herokuapp.com/", this.state)
+      .post("https://pinstagram500-api.herokuapp.com", this.state)
       .then(response => {
         console.log(response);
       })
@@ -79,14 +75,18 @@ export default class AddPhoto extends Component {
               onChange={this.handleChange}
             />
           </div>
-          <input
-            className="submit"
-            type="submit"
-            value="Submit"
-            onClick={this.handleSubmit}
-          />
+          <Link to="/">
+            <input
+              className="submit"
+              type="submit"
+              value="Submit"
+              onClick={this.handleSubmit}
+            />
+          </Link>
         </div>
       </div>
     );
   }
 }
+
+export default AddNewPhoto;

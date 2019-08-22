@@ -1,7 +1,7 @@
 import React from "react";
-import "./CollectionRow.css";
+import "./FavoriteRow.css";
 
-const CollectionRow = ({
+const FavoriteRow = ({
   title = "",
   tags = " ",
   url = "",
@@ -10,10 +10,10 @@ const CollectionRow = ({
 }) => (
   <div>
     <div>
-      <p>{title}</p>
+      {/* <p>{title}</p>
       <p>
         Tags: <span className="tags">{`${tags}`}</span>
-      </p>
+      </p> */}
     </div>
     <div className="contain">
       <div
@@ -25,24 +25,25 @@ const CollectionRow = ({
       {/* <div
         className="photo"
         style={{
-          backgroundImage: `url(${url[1]})`
+          backgroundImage: `url(${urls[1]})`
         }}
       />
       <div
         className="photo"
         style={{
-          backgroundImage: `url(${url[2]})`
+          backgroundImage: `url(${urls[2]})`
         }}
       /> */}
-      <select
+      {/* <select
         className="teamChanger"
         onChange={onChange}
-        name="url"
-        value={url}
+        name="tags"
+        value={tags}
       >
-        <option value={url} />
-        <option value={url}>Add to Favorites</option>
-      </select>
+        <option value="" />
+        <option value="Earth">#Earth</option>
+        <option value="Computer">#Computer</option>
+      </select> */}
       <button className="delete" onClick={onClick}>
         X
       </button>
@@ -50,7 +51,7 @@ const CollectionRow = ({
   </div>
 );
 
-export default CollectionRow;
+export default FavoriteRow;
 
 {
   /* <div className="textContainer">
