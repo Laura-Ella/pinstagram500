@@ -51,7 +51,7 @@ class Photos extends Component {
     window.location.reload();
   }
 
-  incrementLikes = id => {
+  incrementLikes(id) {
     axios
       .put(`https://pinstagram500-api.herokuapp.com/photo/${id}`)
       .then(response => {
@@ -60,7 +60,8 @@ class Photos extends Component {
       .catch(err => {
         console.error(err);
       });
-  };
+    window.location.reload();
+  }
 
   render() {
     const { checked } = this.state;
