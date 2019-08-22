@@ -6,32 +6,60 @@ class Collections extends Component {
   render() {
     let collection = this.props.collectionData.map((collection, index) => {
       return (
-        <div
-          className="driverDivs"
-          key={index}
-          style={{
-            backgroundImage: `url(${collection.urls[0]})`,
-            backgroundPosition: "center",
-            backgroundSize: "250px 250px",
-            backgroundRepeat: "no-repeat",
-            position: "relative",
-            textAlign: "center"
-          }}
-        >
-          <div className="textContainer">
-            <div className="text">
-              <p>
-                <span className="description">Title: </span>
-                {collection.title}
-              </p>
-              <p>
-                <span className="description">Tags: </span>
-                {}
-              </p>
+        <div>
+          <div
+            className="driverDivs"
+            key={index}
+            style={{
+              backgroundImage: `url(${collection.url[0]})`,
+              backgroundPosition: "center",
+              backgroundSize: "250px 250px",
+              backgroundRepeat: "no-repeat",
+              position: "relative",
+              textAlign: "center"
+            }}
+          >
+            <div className="textContainer">
+              <div className="text">
+                <p>
+                  <span className="description">Title: </span>
+                  {collection.title}
+                </p>
+                <p>
+                  <span className="description">Tags: </span>
+                  {}
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            className="driverDivs"
+            key={index}
+            style={{
+              backgroundImage: `url(${collection.url[1]})`,
+              backgroundPosition: "center",
+              backgroundSize: "250px 250px",
+              backgroundRepeat: "no-repeat",
+              position: "relative",
+              textAlign: "center"
+            }}
+          >
+            <div className="textContainer">
+              <div className="text">
+                <p>
+                  <span className="description">Title: </span>
+                  {collection.title}
+                </p>
+                <p>
+                  <span className="description">Tags: </span>
+                  {}
+                </p>
+              </div>
             </div>
           </div>
         </div>
       );
+
       // });
     });
     return (
@@ -55,7 +83,7 @@ class Collections extends Component {
             </Link>
           </div> */}
           <p>{collection.title}</p>
-          <div className="driverGrid">{collection}</div>
+          <div className="driverGrid">{collection[0]}</div>
         </div>
       </div>
     );

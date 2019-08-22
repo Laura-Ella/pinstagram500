@@ -135,17 +135,17 @@ class App extends Component {
           </div>
         </nav>
         <main>
-          {/* <Route path="/" exact component={Home} /> */}
-
           <Route
             path="/"
             exact
             render={routerProps => (
-              <Photos photoData={this.state.photos} {...routerProps} />
+              <Photos
+                collectionData={this.state.collections2}
+                photoData={this.state.photos}
+                {...routerProps}
+              />
             )}
           />
-
-          {/* {/* <Route path="/collections" exact component={Collections} /> */}
           <Route
             path="/collections"
             exact
@@ -156,11 +156,18 @@ class App extends Component {
               />
             )}
           />
-          <Route path="/favorites" exact component={Favorites} />
+          <Route
+            path="/favorites"
+            exact
+            render={routerProps => (
+              <Favorites
+                favoritesData={this.state.favoritesData}
+                {...routerProps}
+              />
+            )}
+          />
 
-          <div>
-            <Route path="/upload" exact component={AddNewPhoto} />
-          </div>
+          <Route path="/upload" exact component={AddNewPhoto} />
 
           <Route path="/about" exact component={About} />
           {/* <div className="appCenter">

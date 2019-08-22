@@ -12,6 +12,7 @@ class Photos extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
+
   deletePhoto(id) {
     axios
       .delete(`https://pinstagram500-api.herokuapp.com/${id}`)
@@ -41,22 +42,6 @@ class Photos extends Component {
   }
 
   handleSubmit(id) {
-    // let photoTags = this.props.driverData.map(list => {
-    //   return list.name;
-    // });
-
-    // let keyList = Object.keys(this.state);
-    // let temp = {};
-    // console.log(keyList);
-    // keyList.forEach(key => {
-    //   console.log(this.state[key]);
-    //   if (!(this.state[key] === "")) {
-    //     temp[key] = this.state[key];
-    //   }
-    // });
-    // console.log(temp);
-
-    // if (driverNames.includes(this.state.name)) {
     axios
       .put(`https://pinstagram500-api.herokuapp.com/${id}`, this.state)
       .then(response => {
@@ -65,8 +50,8 @@ class Photos extends Component {
       .catch(err => {
         console.error(err);
       });
-    // }
   }
+
   render() {
     let photo = this.props.photoData.map((photo, index) => {
       return (
@@ -124,6 +109,7 @@ class Photos extends Component {
             className="extend"
             type="text"
             name="tag"
+            placeholder="Enter a Tag"
             onChange={this.handleChange}
           />
           <input
@@ -144,24 +130,8 @@ class Photos extends Component {
     return (
       <div>
         <div>
-          {/* <div className="edits">
-            <Link to="/drivers/remove">
-              <div className="editDivs3">
-                <p>Remove</p>
-              </div>
-            </Link>
-            <Link to="/drivers/update">
-              <div className="editDivs2">
-                <p>Update</p>
-              </div>
-            </Link>
-            <Link to="/drivers/add">
-              <div className="editDivs1">
-                <p>Add</p>
-              </div>
-            </Link>
-          </div> */}
           <div className="driverGrid">{photo}</div>
+          <div className="driverGrid" />
         </div>
       </div>
     );
