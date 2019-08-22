@@ -90,13 +90,6 @@ class App extends Component {
       });
   }
 
-  updateFavoriteSetting = _id => {
-    let list_data = _id;
-
-    this.state.favorites.push(list_data);
-    console.log(this.state.favorites);
-  };
-
   render() {
     return (
       <div>
@@ -137,6 +130,7 @@ class App extends Component {
             exact
             render={routerProps => (
               <Photos
+                deletePhoto={this.deletePhoto}
                 addFavorite={this.addFavorite}
                 updateFavoriteSetting={this.updateFavoriteSetting}
                 photoData={this.state.photos}
@@ -159,7 +153,11 @@ class App extends Component {
             path="/favorite"
             exact
             render={routerProps => (
-              <Favorites favoriteData={this.state.favorites} {...routerProps} />
+              <Favorites
+                deletePhoto={this.deletePhoto}
+                favoriteData={this.state.favorites}
+                {...routerProps}
+              />
             )}
           />
 

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "./Photos.css";
 import axios from "axios";
 import HeartCheckbox from "react-heart-checkbox";
+import equal from "fast-deep-equal";
 
 class Photos extends Component {
   constructor(props) {
@@ -26,18 +27,8 @@ class Photos extends Component {
         const photos = res.data;
         this.setState({ photos });
       });
+    window.location.reload();
   }
-  // updatePhoto(id) {
-  //   axios
-  //     .put(`https://pinstagram500-api.herokuapp.com/${id}`)
-  //     .then(() => {
-  //       return axios.get(`https://pinstagram500-api.herokuapp.com/`);
-  //     })
-  //     .then(res => {
-  //       const photos = res.data;
-  //       this.setState({ photos });
-  //     });
-  // }
 
   handleChange(evt) {
     evt.preventDefault();
@@ -49,10 +40,14 @@ class Photos extends Component {
       .put(`https://pinstagram500-api.herokuapp.com/${id}`, this.state)
       .then(response => {
         console.log(response);
+        this.setState({
+          photos: response.data
+        });
       })
       .catch(err => {
         console.error(err);
       });
+    window.location.reload();
   }
   heartClick = (event, props) => {
     this.setState({ checked: !this.state.checked });
@@ -63,7 +58,7 @@ class Photos extends Component {
     axios
       .put(
         `https://pinstagram500-api.herokuapp.com/${id}`,
-        this.state.likes + 1
+        this.props.likes + 1
       )
       .then(response => {
         console.log(response);
@@ -71,28 +66,16 @@ class Photos extends Component {
       .catch(err => {
         console.error(err);
       });
-
-    // this.setState({
-    //   counters: this.state.counters + 1
-    // });
   };
-  // votePost = async (id, index) => {
-  //   axios.put(`https://pinstagram500-api.herokuapp.com/${id}`);
 
-  //   // Update your state like this:
-  //   this.setState(({ posts }) => {
-  //     posts[index] = newPostData;
-  //     return posts;
-  //   });
-  // };
   render() {
     const { checked } = this.state;
     let photo = this.props.photoData.map((photo, index) => {
       return (
-        <div className="cardContainer">
+        <div key={photo._id} className="cardContainer">
           <div
             className="photoDivs"
-            key={index}
+            key={photo._id}
             style={{
               backgroundImage: `url(${photo.url})`,
               backgroundPosition: "center",
@@ -125,15 +108,15 @@ class Photos extends Component {
                   className="clicker"
                   onClick={() => this.incrementLikes(photo._id, index)}
                 >
-                  XXX
+                  LIKE
                 </div>
-                <div>
+                {/* <div>
                   <HeartCheckbox
                     className="heart"
                     checked={checked}
                     onClick={() => this.heartClick(photo._id, index)}
                   />
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
@@ -146,14 +129,13 @@ class Photos extends Component {
                 placeholder="Add a Tag"
                 onChange={this.handleChange}
               />
-              <Link to="/">
-                <input
-                  className="submit"
-                  type="submit"
-                  value="Submit"
-                  onClick={() => this.handleSubmit(photo._id)}
-                />
-              </Link>
+
+              <input
+                className="submit"
+                type="submit"
+                value="Submit"
+                onClick={() => this.handleSubmit(photo._id)}
+              />
             </div>
             <button
               className="delete"
