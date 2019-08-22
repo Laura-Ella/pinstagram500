@@ -8,6 +8,7 @@ class Photos extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      likes: this.props.likes,
       checked: false,
       tag: ""
     };
@@ -53,9 +54,37 @@ class Photos extends Component {
         console.error(err);
       });
   }
-  onClick = (event, props) => {
+  heartClick = (event, props) => {
     this.setState({ checked: !this.state.checked });
   };
+
+  incrementLikes = id => {
+    console.log(this.props.photoData);
+    axios
+      .put(
+        `https://pinstagram500-api.herokuapp.com/${id}`,
+        this.state.likes + 1
+      )
+      .then(response => {
+        console.log(response);
+      })
+      .catch(err => {
+        console.error(err);
+      });
+
+    // this.setState({
+    //   counters: this.state.counters + 1
+    // });
+  };
+  // votePost = async (id, index) => {
+  //   axios.put(`https://pinstagram500-api.herokuapp.com/${id}`);
+
+  //   // Update your state like this:
+  //   this.setState(({ posts }) => {
+  //     posts[index] = newPostData;
+  //     return posts;
+  //   });
+  // };
   render() {
     const { checked } = this.state;
     let photo = this.props.photoData.map((photo, index) => {
@@ -87,16 +116,22 @@ class Photos extends Component {
                   <span className="descriptionTitle">Description: </span>
                   {photo.description}
                 </p>
-                {/* <p>
+                <p>
                   <span className="description">Likes: </span>
                   {photo.likes}
-                </p> */}
+                </p>
                 <br />
+                <div
+                  className="clicker"
+                  onClick={() => this.incrementLikes(photo._id, index)}
+                >
+                  XXX
+                </div>
                 <div>
                   <HeartCheckbox
                     className="heart"
                     checked={checked}
-                    onClick={this.onClick}
+                    onClick={() => this.heartClick(photo._id, index)}
                   />
                 </div>
               </div>
@@ -111,12 +146,14 @@ class Photos extends Component {
                 placeholder="Add a Tag"
                 onChange={this.handleChange}
               />
-              <input
-                className="submit"
-                type="submit"
-                value="Submit"
-                onClick={() => this.handleSubmit(photo._id)}
-              />
+              <Link to="/">
+                <input
+                  className="submit"
+                  type="submit"
+                  value="Submit"
+                  onClick={() => this.handleSubmit(photo._id)}
+                />
+              </Link>
             </div>
             <button
               className="delete"

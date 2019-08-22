@@ -75,12 +75,14 @@ class AddNewPhoto extends Component {
               onChange={this.handleChange}
             />
           </div>
-          <input
-            className="submit"
-            type="submit"
-            value="Submit"
-            onClick={this.handleSubmit}
-          />
+          <Link to="/">
+            <input
+              className="submit"
+              type="submit"
+              value="Submit"
+              onClick={this.handleSubmit}
+            />
+          </Link>
         </div>
       </div>
     );
