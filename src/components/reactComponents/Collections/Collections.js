@@ -1,76 +1,108 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./Collections.css";
+import HeartCheckbox from "react-heart-checkbox";
 
 class Collections extends Component {
-  addCollection(id) {
-    this.props.addFavorite(id);
+  constructor(props) {
+    super(props);
+    this.state = {
+      checked: false
+    };
+    // this.handleChange = this.handleChange.bind(this);
+    // this.handleSubmit = this.handleSubmit.bind(this);
   }
+
+  onClick = (event, props) => {
+    this.setState({ checked: !this.state.checked });
+  };
   render() {
+    const { checked } = this.state;
     let collection = this.props.collectionData.map((collection, index) => {
       return (
-        <div>
-          <div
-            className="driverDivs"
-            key={index}
-            style={{
-              backgroundImage: `url(${collection.url[0]})`,
-              backgroundPosition: "center",
-              backgroundSize: "250px 250px",
-              backgroundRepeat: "no-repeat",
-              position: "relative",
-              textAlign: "center"
-            }}
-          >
-            <div className="textContainer">
-              <div className="text">
-                <p>
-                  <span className="description">Title: </span>
-                  {collection.title}
-                </p>
-                <p>
-                  <span className="description">Tags: </span>
-                  {}
-                </p>
+        <div className="collectionContainer">
+          <p className="collectionTitle">
+            <span>Collection: </span>
+            {collection.title}
+          </p>
+          <p className="collectionTags">
+            <span>Tags: </span>
+            {`${collection.tags}`}
+          </p>
+          <div>
+            <div
+              className="collectionDivs"
+              key={index}
+              style={{
+                backgroundImage: `url(${collection.url[0]})`,
+                backgroundPosition: "center",
+                backgroundSize: "600px 500px",
+                backgroundRepeat: "no-repeat",
+                position: "relative",
+                textAlign: "center"
+              }}
+            >
+              <div className="textContainer">
+                <div className="text">
+                  <div>
+                    <HeartCheckbox
+                      className="heart"
+                      checked={checked}
+                      onClick={this.onClick}
+                    />
+                  </div>
+                </div>
               </div>
             </div>
-            <button
-              className="delete"
-              onClick={() => this.addCollection(collection._id)}
+            <div
+              className="collectionDivs"
+              key={index}
+              style={{
+                backgroundImage: `url(${collection.url[1]})`,
+                backgroundPosition: "center",
+                backgroundSize: "600px 500px",
+                backgroundRepeat: "no-repeat",
+                position: "relative",
+                textAlign: "center"
+              }}
             >
-              Add To Favorite
-            </button>
-          </div>
-          <div
-            className="driverDivs"
-            key={index}
-            style={{
-              backgroundImage: `url(${collection.url[1]})`,
-              backgroundPosition: "center",
-              backgroundSize: "250px 250px",
-              backgroundRepeat: "no-repeat",
-              position: "relative",
-              textAlign: "center"
-            }}
-          >
-            <div className="textContainer">
-              <div className="text">
-                <p>
-                  <span className="description">Title: </span>
-                  {collection.title}
-                </p>
-                <p>
-                  <span className="description">Tags: </span>
-                  {}
-                </p>
+              <div className="textContainer">
+                <div className="text">
+                  <div>
+                    <HeartCheckbox
+                      className="heart"
+                      checked={checked}
+                      onClick={this.onClick}
+                    />
+                  </div>
+                </div>
               </div>
             </div>
-            <button
-              className="delete"
-              onClick={() => this.addCollection(collection._id)}
+            <div
+              className="collectionDivs"
+              key={index}
+              style={{
+                backgroundImage: `url(${collection.url[3]})`,
+                backgroundPosition: "center",
+                backgroundSize: "600px 500px",
+                backgroundRepeat: "no-repeat",
+                position: "relative",
+                textAlign: "center"
+              }}
             >
-              Add To Favorite
-            </button>
+              {" "}
+              <div className="textContainer">
+                <div className="text">
+                  <div>
+                    <HeartCheckbox
+                      className="heart"
+                      checked={checked}
+                      onClick={this.onClick}
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       );
@@ -78,27 +110,12 @@ class Collections extends Component {
       // });
     });
     return (
-      <div>
-        <div>
-          {/* <div className="edits">
-            <Link to="/drivers/remove">
-              <div className="editDivs3">
-                <p>Remove</p>
-              </div>
-            </Link>
-            <Link to="/drivers/update">
-              <div className="editDivs2">
-                <p>Update</p>
-              </div>
-            </Link>
-            <Link to="/drivers/add">
-              <div className="editDivs1">
-                <p>Add</p>
-              </div>
-            </Link>
-          </div> */}
-          <p>{collection.title}</p>
-          <div className="driverGrid">{collection[0]}</div>
+      <div className="collectionFlex">
+        <div className="collectionGrid">
+          {collection[0]}
+          {collection[1]}
+          {/* {collection[3]}
+          {collection[4]} */}
         </div>
       </div>
     );

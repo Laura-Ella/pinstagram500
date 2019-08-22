@@ -1,0 +1,83 @@
+.collectionFlex {
+  display: flex;
+  justify-content: center;
+}
+.collectionContainer {
+  text-align: center;
+  margin: 2% 0;
+}
+a {
+  color: black;
+  text-decoration: none;
+}
+.collectionGrid {
+  margin-top: 5%;
+  display: grid;
+  grid-template-columns: 400px 400px;
+  /* grid-template-rows: 60% 60% 60% 60%; */
+  height: 50vh;
+  width: 60vw;
+  justify-content: space-between;
+}
+/* .collectionGrid {
+  display: flex;
+  justify-content: center;
+} */
+.textContainer {
+  transition: 0.4s ease;
+  opacity: 0;
+  position: relative;
+  background: white;
+  padding: 25% 0;
+}
+.collectionDivs:hover {
+  opacity: 0.75;
+  border: 2px solid white;
+  padding: 0;
+}
+.collectionDivs:hover .textContainer {
+  opacity: 1;
+}
+.collectionDivs:hover .giveTag {
+  display: none;
+}
+.text {
+  font-size: 14px;
+}
+.description {
+  font-weight: bolder;
+  color: black;
+}
+.giveTag {
+  margin: 20px 0 25px;
+}
+.collectionDivs {
+  border: 0.5px solid black;
+  margin: 5% 0;
+  height: 250px;
+}
+.tagInputBox {
+  border: 1px solid black;
+  margin: 0 5px;
+  font-size: 20px;
+}
+.submit {
+  border: 1px solid black;
+  background: white;
+  font-size: 20px;
+}
+.delete {
+  background: lightcoral;
+  color: black;
+  border: 1px solid black;
+  font-size: 10px;
+}
+.collectionTitle {
+  font-size: 25px;
+}
+.collectionTags {
+  font-size: 20px;
+}
+span {
+  font-weight: bolder;
+}
