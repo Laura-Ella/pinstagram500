@@ -23,13 +23,13 @@ class About extends Component {
               <img src=""></img>
             </div>
             <div className="bio">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
             <div className="meet">
               <img src=""></img>
             </div>
             <div className="bio">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
             <div className="meet">
               <img src=""></img>
@@ -56,7 +56,7 @@ class About extends Component {
           </div>
         </div>
 
-        <div class="timeline">
+        {/* <div class="timeline">
           <div class="container left">
             <div class="content">
               <h2>2017</h2>
@@ -81,7 +81,7 @@ class About extends Component {
               <p>Lorem ipsum..</p>
             </div>
           </div>
-        </div>
+        </div> */}
 
         <div className="footercontainer">
           <div className="footerleft">
@@ -90,12 +90,10 @@ class About extends Component {
             <p>Phone Number: 202-322-9847</p>
           </div>
           <div className="footerright">
-            <ul>
-              <li>Home</li>
-              <li>Contact Us</li>
-              <li>Careers</li>
-              <li>Privacy Policy</li>
-            </ul>
+              <a href="#">Home</a>
+              <a href="#">Contact Us</a>
+              <a href="#">Careers</a>
+              <a href="#">Privacy Policy</a>
           </div>
         </div>
       </div>
