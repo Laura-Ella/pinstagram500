@@ -76,6 +76,7 @@ class App extends Component {
   }
 
   componentDidMount() {
+    console.log(this.state.favorites);
     axios
       .get(searchUrl)
       .then(response => {
@@ -87,18 +88,14 @@ class App extends Component {
       .catch(err => {
         console.error(err);
       });
-    // axios
-    //   .get(searchUrlCollection)
-    //   .then(response => {
-    //     this.setState({
-    //       collections: response.data
-    //     });
-    //     console.log(this.state.collections);
-    //   })
-    //   .catch(err => {
-    //     console.error(err);
-    //   });
   }
+
+  updateFavoriteSetting = _id => {
+    let list_data = _id;
+
+    this.state.favorites.push(list_data);
+    console.log(this.state.favorites);
+  };
 
   render() {
     return (
@@ -121,11 +118,11 @@ class App extends Component {
                   <p>[ Upload ]</p>
                 </div>
               </Link>
-              <Link className="hoverable" to="/favorites">
+              {/* <Link className="hoverable" to="/favorite">
                 <div>
                   <p>[ Favorites ]</p>
                 </div>
-              </Link>
+              </Link> */}
               <Link className="hoverable" to="/about">
                 <div>
                   <p>[ About ]</p>
@@ -140,7 +137,8 @@ class App extends Component {
             exact
             render={routerProps => (
               <Photos
-                collectionData={this.state.collections2}
+                addFavorite={this.addFavorite}
+                updateFavoriteSetting={this.updateFavoriteSetting}
                 photoData={this.state.photos}
                 {...routerProps}
               />
@@ -151,19 +149,17 @@ class App extends Component {
             exact
             render={routerProps => (
               <Collections
+                addFavorite={this.addFavorite}
                 collectionData={this.state.collections2}
                 {...routerProps}
               />
             )}
           />
           <Route
-            path="/favorites"
+            path="/favorite"
             exact
             render={routerProps => (
-              <Favorites
-                favoritesData={this.state.favoritesData}
-                {...routerProps}
-              />
+              <Favorites favoriteData={this.state.favorites} {...routerProps} />
             )}
           />
 

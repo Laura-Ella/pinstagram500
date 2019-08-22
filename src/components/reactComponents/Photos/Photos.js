@@ -2,11 +2,13 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./Photos.css";
 import axios from "axios";
+import HeartCheckbox from "react-heart-checkbox";
 
 class Photos extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      checked: false,
       tag: ""
     };
     this.handleChange = this.handleChange.bind(this);
@@ -51,8 +53,11 @@ class Photos extends Component {
         console.error(err);
       });
   }
-
+  onClick = (event, props) => {
+    this.setState({ checked: !this.state.checked });
+  };
   render() {
+    const { checked } = this.state;
     let photo = this.props.photoData.map((photo, index) => {
       return (
         <div
@@ -70,29 +75,18 @@ class Photos extends Component {
           <div className="textContainer">
             <div className="text">
               <p>
-                <span className="description">Name: </span>
-                {photo.name}
+                <span className="description">User: </span>
+                {photo.username}
               </p>
               <p>
-                <span className="description">ID: </span>
-                {photo._id}
+                <span className="description">Description: </span>
+                {photo.description}
               </p>
               <p>
-                <span className="description">Birthplace: </span>
-                {photo.birthplace}
+                <span className="description">Likes: </span>
+                {photo.likes}
               </p>
-              <p>
-                <span className="description">Team: </span>
-                {photo.team}
-              </p>
-              <p>
-                <span className="description">Rank: </span>
-                {photo.rank}
-              </p>
-              <p>
-                <span className="description">Tag: </span>
-                {photo.tag}
-              </p>
+              <HeartCheckbox checked={checked} onClick={this.onClick} />
             </div>
           </div>
           {/* <select
@@ -122,7 +116,7 @@ class Photos extends Component {
             className="delete"
             onClick={() => this.deletePhoto(photo._id)}
           >
-            X
+            Remove Photo
           </button>
         </div>
       );
@@ -130,8 +124,7 @@ class Photos extends Component {
     return (
       <div>
         <div>
-          <div className="driverGrid">{photo}</div>
-          <div className="driverGrid" />
+          <div className="driverGrid">{photo[0]}</div>
         </div>
       </div>
     );

@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import "./Collections.css";
 
 class Collections extends Component {
+  addCollection(id) {
+    this.props.addFavorite(id);
+  }
   render() {
     let collection = this.props.collectionData.map((collection, index) => {
       return (
@@ -31,6 +34,12 @@ class Collections extends Component {
                 </p>
               </div>
             </div>
+            <button
+              className="delete"
+              onClick={() => this.addCollection(collection._id)}
+            >
+              Add To Favorite
+            </button>
           </div>
           <div
             className="driverDivs"
@@ -56,6 +65,12 @@ class Collections extends Component {
                 </p>
               </div>
             </div>
+            <button
+              className="delete"
+              onClick={() => this.addCollection(collection._id)}
+            >
+              Add To Favorite
+            </button>
           </div>
         </div>
       );

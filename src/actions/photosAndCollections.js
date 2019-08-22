@@ -9,6 +9,7 @@ import {
   UPDATE_FAVORITE,
   DELETE_FAVORITE
 } from "../constants/photosAndCollections";
+import axios from "axios";
 
 export function createNewPhoto(url, username, description, height, width, tag) {
   return {
@@ -24,7 +25,19 @@ export function createNewPhoto(url, username, description, height, width, tag) {
   };
 }
 
-export const deletePhoto = _id => ({ type: DELETE_PHOTO, payload: _id });
+export const deletePhoto = _id => {
+  axios
+    .delete(`https://pinstagram500-api.herokuapp.com/${_id}`)
+    .then(() => {
+      return axios.get(`https://pinstagram500-api.herokuapp.com/`);
+    })
+    .then(res => {
+      const photos = res.data;
+      this.setState({ photos });
+    });
+};
+
+// export const deletePhoto = _id => ({ type: DELETE_PHOTO, payload: _id });
 
 export const updatePhoto = (id, updatedPhoto) => ({
   type: UPDATE_PHOTO,
