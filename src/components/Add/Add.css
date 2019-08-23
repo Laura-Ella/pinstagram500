@@ -7,12 +7,10 @@
   border-radius: 3px;
   padding: 20px;
 }
-
 .formInput {
   display: flex;
   justify-content: center;
 }
-
 .submit {
   margin: 3px;
   border-radius: 2px;

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import "./Add.css";
 
@@ -36,7 +36,7 @@ class AddNewPhoto extends Component {
     return (
       <div className="formInput">
         <div className="formGrid">
-          <div className="formTitle">Add a Photo</div>
+          <div className="formTitle">Upload a Photo</div>
           <div className="inputField">
             <p>Image</p>
             <input

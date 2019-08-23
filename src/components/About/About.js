@@ -45,7 +45,7 @@ class About extends Component {
             </div>
             <div className="bio">
               <p>Austin's Bio</p>
-              <p>Software Engineer out of Arlington, VA.</p>
+              <p>Software Developer out of Arlington, VA.</p>
               <p>
                 <a
                   href="https://www.linkedin.com/in/austin-regan/"

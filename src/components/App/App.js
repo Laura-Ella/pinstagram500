@@ -113,18 +113,19 @@ class App extends Component {
               </div>
             </Link>
             <div className="navBottomLinks">
-              <Link className="hoverable" to="/collections">
-                <div>
-                  <p>[ Collections ]</p>
-                </div>
-              </Link>
               <Link className="hoverable" to="/upload">
-                <div>
+                <div className="navLinks">
                   <p>[ Upload ]</p>
                 </div>
               </Link>
+              <Link className="hoverable" to="/collections">
+                <div className="navLinks">
+                  <p>[ Collections ]</p>
+                </div>
+              </Link>
+
               <Link className="hoverable" to="/about">
-                <div>
+                <div className="navLinks">
                   <p>[ About ]</p>
                 </div>
               </Link>

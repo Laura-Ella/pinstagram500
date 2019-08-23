@@ -22,7 +22,7 @@ a {
   transition: 0.4s ease;
   opacity: 0;
   position: relative;
-  background: #f0f0ec;
+  background: white;
   padding: 25% 0;
 }
 .collectionDivs:hover {
@@ -43,29 +43,10 @@ a {
   font-weight: bolder;
   color: black;
 }
-.giveTag {
-  margin: 20px 0 25px;
-}
 .collectionDivs {
   border: 0.5px solid black;
   margin: 5% 0;
   height: 250px;
-}
-.tagInputBox {
-  border: 1px solid black;
-  margin: 0 5px;
-  font-size: 20px;
-}
-.submit {
-  border: 1px solid black;
-  background: white;
-  font-size: 20px;
-}
-.deleteButton {
-  background: lightcoral;
-  color: black;
-  border: 1px solid black;
-  font-size: 10px;
 }
 .collectionTitle {
   font-size: 25px;
@@ -75,4 +56,30 @@ a {
 }
 span {
   font-weight: bolder;
+}
+
+@media only screen and (max-width: 626px) {
+  .collectionContainer {
+    text-align: center;
+    margin: 15% auto;
+  }
+  .collectionTitle {
+    font-size: 20px;
+  }
+  .collectionTags {
+    font-size: 18px;
+  }
+  .collectionGrid {
+    grid-template-columns: 300px;
+    width: 83vw;
+    justify-content: space-between;
+  }
+  .collectionDivs {
+    border: 0.5px solid black;
+    margin: 20% 0;
+    height: 250px;
+  }
+  .textContainerCollections {
+    padding: 34% 0;
+  }
 }

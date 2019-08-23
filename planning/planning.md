@@ -64,3 +64,34 @@ https://unsplash.com/documentation#list-collections
 - Preview_Photos {
   raw (link to photo)
   }
+
+## Responsibilities of Contributors
+
+1. Laura:
+
+Backend:
+
+- API database used to get JSON
+- Seeding JSON data
+- Routes and Controllers
+
+Frontend:
+
+- About page
+
+2. Dee:
+   Backend:
+
+- Schemas and Models
+- Routes and Controllers
+
+Documentation for frontend and backend
+
+3. Austin:
+
+Frontend:
+
+- Initializing React App
+- Establishing routes and links
+- Photo and Collections pages
+- Axios requests to backend

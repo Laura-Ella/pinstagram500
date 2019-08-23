@@ -8,9 +8,9 @@ a {
   text-decoration: underline;
 }
 
-/* a:hover {
-  color: red;
-} */
+a:hover {
+  color: lightcoral;
+}
 
 h4 {
   margin: auto;
@@ -102,7 +102,6 @@ a {
 
 input {
   padding: 15px;
-  /* background-color: whitesmoke; */
   margin-right: 5px;
   border: none;
   border-bottom: 2px solid lightcoral;
@@ -116,7 +115,6 @@ input {
 
 .story {
   background-color: rgba(255, 255, 255, 0);
-  /* text-decoration: underline; */
   padding: 18px;
   line-height: 25px;
   width: 500px;
@@ -124,15 +122,10 @@ input {
   margin-left: 3px;
   margin-top: 70px;
   font-size: 20px;
-  /* color: black;
-    text-shadow:
-    -1px -1px 0 white,
-    1px -1px 0 white,
-    -1px 1px 0 white,
-    1px 1px 0 white; */
   font-style: italic;
   color: whitesmoke;
   font-weight: lighter;
+  background: rgba(0, 0, 0, 0.8);
 }
 
 .footerright {
@@ -177,7 +170,6 @@ h3 {
   justify-content: center;
   align-content: space-between;
   padding: 15px;
-  /* float: none */
 }
 
 .divide {
@@ -188,31 +180,23 @@ h3 {
 }
 
 button {
-  background-color: red;
-  /* border-radius: 5px; */
-  border-color: red;
+  background-color: lightcoral;
+  border-color: lightcoral;
   color: white;
   padding: 15px;
   font-size: 20px;
 }
 
-/* {
-    box-sizing: border-box;
-  } */
-
-/* Set a background color */
 .main {
   background-color: #474e5d;
 }
 
-/* The actual timeline (the vertical ruler) */
 .timeline {
   position: relative;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* The actual timeline (the vertical ruler) */
 .timeline::after {
   content: "";
   position: absolute;
@@ -224,7 +208,6 @@ button {
   margin-left: -3px;
 }
 
-/* Container around content */
 .container {
   padding: 10px 40px;
   position: relative;
@@ -232,7 +215,6 @@ button {
   width: 50%;
 }
 
-/* The circles on the timeline */
 .container::after {
   content: "";
   position: absolute;
@@ -246,17 +228,14 @@ button {
   z-index: 1;
 }
 
-/* Place the container to the left */
 .left {
   left: 0;
 }
 
-/* Place the container to the right */
 .right {
   left: 50%;
 }
 
-/* Add arrows to the left container (pointing right) */
 .left::before {
   content: " ";
   height: 0;
@@ -270,7 +249,6 @@ button {
   border-color: transparent transparent transparent white;
 }
 
-/* Add arrows to the right container (pointing left) */
 .right::before {
   content: " ";
   height: 0;
@@ -284,12 +262,10 @@ button {
   border-color: transparent white transparent transparent;
 }
 
-/* Fix the circle for containers on the right side */
 .right::after {
   left: -16px;
 }
 
-/* The actual content */
 .content {
   padding: 20px 30px;
   background-color: white;
@@ -297,21 +273,17 @@ button {
   border-radius: 6px;
 }
 
-/* Media queries - Responsive timeline on screens less than 600px wide */
 @media screen and (max-width: 600px) {
-  /* Place the timelime to the left */
   .timeline::after {
     left: 31px;
   }
 
-  /* Full-width containers */
   .container {
     width: 100%;
     padding-left: 70px;
     padding-right: 25px;
   }
 
-  /* Make sure that all arrows are pointing leftwards */
   .container::before {
     left: 60px;
     border: medium solid white;
@@ -319,13 +291,11 @@ button {
     border-color: transparent white transparent transparent;
   }
 
-  /* Make sure all circles are at the same spot */
   .left::after,
   .right::after {
     left: 15px;
   }
 
-  /* Make all right containers behave like the left ones */
   .right {
     left: 0%;
   }

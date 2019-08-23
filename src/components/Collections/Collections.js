@@ -1,8 +1,6 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import "./Collections.css";
 import HeartCheckbox from "react-heart-checkbox";
-import axios from "axios";
 
 class Collections extends Component {
   constructor(props) {
@@ -10,8 +8,6 @@ class Collections extends Component {
     this.state = {
       checked: false
     };
-    // this.handleChange = this.handleChange.bind(this);
-    // this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   onClick = (event, props) => {
@@ -25,15 +21,6 @@ class Collections extends Component {
       );
     }
   };
-  deleteCollection(id) {
-    axios
-      .delete(`https://pinstagram500-api.herokuapp.com/collection/${id}`)
-      .then(res => {
-        console.log(res);
-        this.setState({ collections: res.data });
-      });
-    window.location.reload();
-  }
   render() {
     const { checked } = this.state;
     let collection = this.props.collectionData.map((collection, index) => {
@@ -120,25 +107,15 @@ class Collections extends Component {
                 </div>
               </div>
             </div>
-            <button
-              className="deleteButton"
-              onClick={() => this.deleteCollection(collection._id)}
-            >
-              Delete Collection
-            </button>
           </div>
         </div>
       );
-
-      // });
     });
     return (
       <div className="collectionFlex">
         <div className="collectionGrid">
           {collection[0]}
           {collection[1]}
-          {/* {collection[3]}
-          {collection[4]} */}
         </div>
       </div>
     );

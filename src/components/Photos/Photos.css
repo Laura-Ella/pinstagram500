@@ -14,35 +14,25 @@ a {
 .textContainer {
   transition: 0.4s ease;
   opacity: 0;
-  /* background: #f0f0ec; */
-  /* background: #f8f8f8; */
   background: rgba(255, 255, 255, 0.899);
   padding: 8% 0;
   display: flex;
   justify-content: center;
   position: absolute;
   bottom: 0px;
-  left: 0;
   border: 1px solid black;
 }
 .textGrid {
   display: grid;
   justify-content: center;
-  grid-template-columns: 40% 40%;
-  grid-template-rows: 40% 40%;
-  /* height: 5vh; */
-  /* width: 10vw; */
-  justify-content: space-between;
+  grid-template-columns: 224px 224px;
+  grid-template-rows: 40px 40px;
 }
 .photoDivs:hover {
   opacity: 0.75;
-  /* border: 2px solid white; */
 }
 .photoDivs:hover .textContainer {
   opacity: 1;
-}
-.photoDivs:hover .bottomContain {
-  visibility: hidden;
 }
 .descriptionValue {
   font-size: 18px;
@@ -54,9 +44,6 @@ a {
   font-size: 20px;
   margin: 0;
 }
-.giveTag {
-  margin: 18px 0 25px;
-}
 .photoDivs {
   border: 0.5px solid black;
   height: 500px;
@@ -64,8 +51,10 @@ a {
 }
 .tagInputBox {
   border: 1px solid black;
-  margin: 0 5px;
   font-size: 20px;
+}
+.giveTag {
+  margin: 5% 0;
 }
 .submit {
   border: 1px solid black;
@@ -78,6 +67,44 @@ a {
   border: 1px solid black;
   font-size: 10px;
 }
-.clicker {
-  border: 2px solid black;
+
+@media only screen and (max-width: 626px) {
+  .cardContainer {
+    text-align: center;
+    margin: 15% auto;
+  }
+  .photoDivs {
+    width: 275px;
+    height: 275px;
+    margin: 2% auto;
+  }
+  .textGrid {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 149px 149px;
+    grid-template-rows: 40px 40px;
+  }
+  .textContainer {
+    padding: 3% 0;
+  }
+  .giveTag {
+    margin: 2% 0;
+  }
+  .descriptionValue {
+    font-size: 15px;
+    margin: 0;
+  }
+  .descriptionTitle {
+    font-size: 14px;
+  }
+  .tagInputBox {
+    font-size: 10px;
+  }
+  .submit {
+    font-size: 10px;
+  }
+  .delete {
+    margin-top: 10%;
+    font-size: 8px;
+  }
 }
