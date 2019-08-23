@@ -116,6 +116,10 @@ class Collections extends Component {
         <div className="collectionGrid">
           {collection[0]}
           {collection[1]}
+          {collection[2]}
+          {collection[3]}
+          {collection[4]}
+          {collection[5]}
         </div>
       </div>
     );
