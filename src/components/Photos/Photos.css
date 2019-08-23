@@ -81,7 +81,7 @@ a {
   .textGrid {
     display: grid;
     justify-content: center;
-    grid-template-columns: 149px 149px;
+    grid-template-columns: 136px 137px;
     grid-template-rows: 40px 40px;
   }
   .textContainer {
