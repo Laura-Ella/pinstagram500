@@ -143,11 +143,7 @@ class Photos extends Component {
     });
     return (
       <div>
-        <div className="photoFlex">
-          {photo[0]}
-          {photo[1]}
-          {photo[2]}
-        </div>
+        <div className="photoFlex">{photo}</div>
       </div>
     );
   }
