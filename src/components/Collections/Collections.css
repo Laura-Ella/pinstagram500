@@ -71,7 +71,7 @@ span {
   }
   .collectionGrid {
     grid-template-columns: 300px;
-    width: 83vw;
+    width: 77vw;
     justify-content: space-between;
   }
   .collectionDivs {
