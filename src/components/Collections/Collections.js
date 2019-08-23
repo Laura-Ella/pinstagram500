@@ -114,12 +114,8 @@ class Collections extends Component {
     return (
       <div className="collectionFlex">
         <div className="collectionGrid">
-          {collection[0]}
-          {collection[1]}
-          {collection[2]}
-          {collection[3]}
-          {collection[4]}
           {collection[5]}
+          {collection[1]}
         </div>
       </div>
     );
