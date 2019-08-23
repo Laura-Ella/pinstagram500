@@ -1,7 +1,7 @@
 
 # PINSTAGRAM500
 
-Pinstagram500 is an app which allows users to add photos and tag them based on their description i.e Sad, Happy, Sunset, family etc.  It allows users to showcase things they are interested in based on pictures within their collection, selections.
+Pinstagram500 is an app which allows users to add photos and tag them based on their description i.e Sad, Happy, Sunset, family etc. In addition to this users can interact with a collection of pictures that are organized by tag.
 
 ## Prerequisites
 
